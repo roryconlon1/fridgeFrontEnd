@@ -14,10 +14,14 @@ const FoodList = ({foods}) => {
             <li key={index} className="foodList wrap">
                 <div className="fooditem">
                     <Food food={food}/>
+                    <p>
+
+        </p>
                 </div>
             </li>
         )
     })
+    
 
 
     return(
@@ -29,3 +33,4 @@ const FoodList = ({foods}) => {
 }
 
 export default FoodList;
+

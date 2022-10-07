@@ -29,17 +29,11 @@ const Food = ({food}) => {
     return(
 
         <Fragment>
-        <p>
+        <h1>
             <Link to={url} className="name">
                 {food.name}
             </Link>
-        </p>
-        <h1 className="foodItem">
-            {food.name}
         </h1>
-        <div className="foodItem"> 
-            {allRecipes}
-        </div>
         </Fragment>
     )
 }
