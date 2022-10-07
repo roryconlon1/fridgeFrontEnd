@@ -12,7 +12,7 @@ const Food = ({food}) => {
 
     const allRecipes = food.recipes.map((recipe, index) => {
         return(
-            <li key={index}>
+            <li key={index} >
                 <ul>
                     <i>{recipe.name}</i>
                 </ul>
@@ -28,7 +28,7 @@ const Food = ({food}) => {
     return(
 
         <Fragment>
-        <h1>
+        <h1 className="foodItem">
             {food.name}{allRecipes}
         </h1>
         </Fragment>

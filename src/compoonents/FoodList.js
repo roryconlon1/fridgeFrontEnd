@@ -11,7 +11,7 @@ const FoodList = ({foods}) => {
 
     const foodElements = foods.map((food, index) => {
         return(
-            <li key={index} className="foodlist">
+            <li key={index} className="foodList wrap">
                 <div className="fooditem">
                     <Food food={food}/>
                 </div>
@@ -21,7 +21,7 @@ const FoodList = ({foods}) => {
 
 
     return(
-        <ul className="components-list">
+        <ul className="components-list wrap">
             {foodElements}
         </ul>
     )

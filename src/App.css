@@ -16,6 +16,40 @@
   }
 }
 
+.components-list {
+  margin: 10px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.wrap    { 
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+} 
+
+.wrap li {
+  background: green;
+  margin: 4px;
+}
+
+.foodItem {
+  /* padding: 5px;
+  width: 100px;
+  height: 100px; */
+  margin: 10px;
+  border-radius: 10%;
+
+  
+  /* line-height: 100px;
+  color: white;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center; */
+}
+
+
 .navBar {
   list-style-type: none;
 margin: 0;
