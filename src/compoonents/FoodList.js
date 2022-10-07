@@ -19,6 +19,7 @@ const FoodList = ({foods}) => {
         )
     })
 
+
     return(
         <ul className="components-list">
             {foodElements}

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Routes, Route } from "react-router-dom";
-import FoodList from "../components/FoodList";
+import FoodList from "../compoonents/FoodList";
 import Request from "../helpers/request";
 
 const FoodContainer = () => {
@@ -16,15 +16,10 @@ const FoodContainer = () => {
         })
     }, [])
 
-    console.log(foods);
-
-
-
 
     return(
         <div>
             <FoodList foods={foods}/>
-        <p>Hello</p>
         </div>
     )
 }

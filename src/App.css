@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0%;
 }
 
 .App-logo {
@@ -11,6 +14,33 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.navBar {
+  list-style-type: none;
+margin: 0;
+padding: 50px;
+overflow: hidden;
+display: flex;
+justify-content: center;
+background-color: #92A8D1;
+
+}
+
+.nav_id {
+  float: left;
+display: block;
+color: white;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+padding-top: 3px;
+padding-bottom: 3px;
+font-size: 2em;
+}
+
+.nav_id:hover {
+  background-color: #a7b9da;
 }
 
 .App-header {
@@ -35,4 +65,5 @@
   to {
     transform: rotate(360deg);
   }
+
 }
