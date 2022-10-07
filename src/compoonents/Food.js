@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 const Food = ({food}) => {
 
@@ -21,15 +22,20 @@ const Food = ({food}) => {
     })
 
 
-    // const url = "/foods/" 
+    const url = "/foods/" + food.id; 
 
     
 
     return(
 
         <Fragment>
+        <p>
+            <Link to={url} className="name">
+                {food.name}
+            </Link>
+        </p>
         <h1 className="foodItem">
-            {food.name}{allRecipes}
+            {food.name}
         </h1>
         </Fragment>
     )
