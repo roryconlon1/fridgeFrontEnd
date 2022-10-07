@@ -3,6 +3,9 @@ import NavBar from "../navBar";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import HomeContainer from "./HomeContainer";
+import FoodContainer from "./FoodContainer";
+import RecipeContainer from "./RecipeContainer";
+
 
 const MainContainer = () => {
 
