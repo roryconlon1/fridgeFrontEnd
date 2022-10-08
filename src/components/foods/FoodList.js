@@ -14,9 +14,6 @@ const FoodList = ({foods}) => {
             <li key={index} className="foodList wrap">
                 <div className="fooditem">
                     <Food food={food}/>
-                    <p>
-
-        </p>
                 </div>
             </li>
         )

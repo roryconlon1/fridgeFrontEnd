@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 // import { BrowserRouter as Routes, Route } from "react-router-dom";
-import FoodList from "../compoonents/FoodList";
+import FoodList from "../components/foods/FoodList";
 import Request from "../helpers/request";
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import FoodDetail from "../compoonents/FoodDetail";
+import FoodDetail from "../components/foods/FoodDetail";
 
 const FoodContainer = ({foodElements}) => {
 
