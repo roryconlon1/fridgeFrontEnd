@@ -10,7 +10,7 @@ import FoodsForm from "../components/foods/FoodsForm";
 import LastestFood from "../components/foods/LastestFood";
 import SelectedFood from "../components/foods/SelectedFood";
 
-const FoodContainer = ({foodElements}) => {
+const FoodContainer = ({foodElements, recipes}) => {
 
 
     const [foods, setFoods] = useState([])
@@ -62,7 +62,7 @@ const FoodContainer = ({foodElements}) => {
             <LastestFood foods={filterFoods}/>
             <Routes>
                 <Route path=":id" element={<FoodDetailWrapper/>} />
-                <Route path="/" element={<FoodList foods={foods} onSelectedUpdate={onSelectedUpdate} select={select}/>} />
+                <Route path="/" element={<FoodList foods={foods} onSelectedUpdate={onSelectedUpdate} select={select} recipes={recipes}/>} />
             </Routes>
         </div>
     )

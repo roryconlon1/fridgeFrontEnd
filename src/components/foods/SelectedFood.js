@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react'
 
-const SelectedFood = (({select}) => {
+const SelectedFood = (({select, recipes}) => {
 
 
     const showSelected = select.map((item, index) => {
@@ -18,10 +18,16 @@ const SelectedFood = (({select}) => {
         return b.filter(Set.prototype.has, new Set(a));
     }, allRecipeId[0]);
 
+    const recipesId = recipes.map((recipe) => {
+        if (commonRecipes && commonRecipes.includes(recipe.id)){
+            return recipe.name
+        }
+    })
 
 
 
-    // const allRecipes = (select.length === 0) ? null : select.recipes.map((recipe, index) => {
+
+    // const allRecipes = (commonRecipes.length === 0) ? null : select.recipes.map((recipe, index) => {
     //     return (
     //         <div key={index}>
                 
@@ -30,11 +36,20 @@ const SelectedFood = (({select}) => {
     //     )
     // })
 
+    // const allRecipes = () => {
+    //     if(parseInt(recipes.id) === parseInt(commonRecipes)){
+    //         return recipes.name
+    //     }
+    // }
+
+
   return (
     <div>SelectedFood
         {showSelected}
         {/* <p>{allRecipes}</p> */}
-        {commonRecipes}
+        <p>{recipesId}</p>
+        {/* {recipes.name} */}
+        {/* {commonRecipes} */}
     </div>
     
   )

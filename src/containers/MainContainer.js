@@ -55,7 +55,7 @@ const MainContainer = () => {
             <NavBar />
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
-                <Route path="/foods/*" element={<FoodContainer />} />
+                <Route path="/foods/*" element={<FoodContainer recipes={recipes}/>} />
                 <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} />} />
             </Routes>
         </div>

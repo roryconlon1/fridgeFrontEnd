@@ -11,40 +11,6 @@ import LastestRecipe from "../components/recipes/LastestRecipe";
 
 const RecipeContainer = ({recipes, RecipeDetailWrapper, filterRecipe, handleChange, filter}) => {
 
-//     const [recipes, setRecipes] = useState([]);
-//     const [filter, setFilter] =useState("");
-//     const [filterRecipe, setfilterRecipe] = useState([]);
-
-//     useEffect(() => {
-//         const request = new Request()
-//         request.get("/api/recipes")
-//             .then((data) => {
-//                 setRecipes(data)
-//             })
-//     }, [])
-
-
-//     useEffect (() => {
-//         const filteredResults = recipes.filter(recipe => {
-//             return recipe.name.toLowerCase().includes(filter.toLowerCase())
-//         })
-//         setfilterRecipe(filteredResults)
-//     }, [filter])
-
-//     const handleChange = (filtervalue) => {
-//         setFilter(filtervalue)};
-
-//     const findRecipeById = (id) => {
-//         return recipes.find((recipe) => {
-//             return recipe.id === parseInt(id)
-//         })
-//     }
-
-//     const RecipeDetailWrapper = () => {
-//         const { id } = useParams();
-//         let foundRecipe = findRecipeById(id)
-//         return <RecipeDetail recipe={foundRecipe}/>
-//     }
 
     return(
         <div>
