@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Route } from "react-router-dom";
+import { Route, useParams } from "react-router-dom";
 import { Routes } from "react-router-dom";
+import RecipeDetail from "../components/recipes/RecipeDetail";
 import RecipeList from "../components/recipes/RecipeList";
 import Request from "../helpers/request";
 import RecipesForm from "../components/foods/FoodsForm";
@@ -22,6 +23,7 @@ const RecipeContainer = () => {
             })
     }, [])
 
+
     useEffect (() => {
         const filteredResults = recipes.filter(recipe => {
             return recipe.name.toLowerCase().includes(filter.toLowerCase())
@@ -31,6 +33,17 @@ const RecipeContainer = () => {
 
     const handleChange = (filtervalue) => {
         setFilter(filtervalue)
+
+    const findRecipeById = (id) => {
+        return recipes.find((recipe) => {
+            return recipe.id === parseInt(id)
+        })
+    }
+
+    const RecipeDetailWrapper = () => {
+        const { id } = useParams();
+        let foundRecipe = findRecipeById(id)
+        return <RecipeDetail recipe={foundRecipe}/>
     }
 
     return(
@@ -39,6 +52,7 @@ const RecipeContainer = () => {
             <LastestRecipe recipes={filterRecipe}/>
             <Routes>
                 <Route path="/" element={<RecipeList recipes={recipes}/>}></Route>
+                <Route path=":id" element={<RecipeDetailWrapper/>}/>
             </Routes>
         </div>
     )

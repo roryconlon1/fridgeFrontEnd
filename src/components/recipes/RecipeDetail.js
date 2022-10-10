@@ -1,28 +1,25 @@
-// import React from "react";
-// import Food from "./Food";
+import React from "react";
+import Recipe from "./Recipe";
 
-// const FoodDetail = ({ food }) => {
+const RecipeDetail = ({recipe}) => {
 
-//     if (!food) {
-//         return <p>Loading...</p>
-//     }
+    if(!recipe){
+        return <p>Loading . . .</p>
+    }
 
-//     const allRecipes = food.recipes.map((recipe, index) => {
-//         return (
-//             <div key={index}>
-//                 <h4><i>{recipe.name}</i></h4>
-//             </div>
-//         )
-//     })
+    const allFoods = recipe.foods.map((food, index) => {
+        return <div key={index}>
+            {food.name}
+        </div>
+    })
 
-//     return (
-//         <div className="foodItem">
-//             <Food food={food} />
-//             <h3>Recipes containing {food.name}: </h3>
-//             {allRecipes}
-//         </div>
-//     )
+    return(
+        <div className="foodItem">
+            <h1>{recipe.name}</h1>
+            <h2>Ingredients :</h2>
+            <h3><i>{allFoods}</i></h3>
+        </div>
+    )
+}
 
-// }
-
-// export default FoodDetail;
+export default RecipeDetail;
