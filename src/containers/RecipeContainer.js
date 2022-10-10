@@ -32,7 +32,7 @@ const RecipeContainer = () => {
     }, [filter])
 
     const handleChange = (filtervalue) => {
-        setFilter(filtervalue)
+        setFilter(filtervalue)};
 
     const findRecipeById = (id) => {
         return recipes.find((recipe) => {

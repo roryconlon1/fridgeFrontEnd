@@ -1,7 +1,9 @@
 import React from "react";
+import Select from "react-select/lib/Select";
 import Food from "./Food";
+import SelectedFood from "./SelectedFood";
 
-const FoodList = ({foods}) => {
+const FoodList = ({foods, onSelectedUpdate, select}) => {
 
     if(foods.length === 0){
         return(
@@ -13,7 +15,7 @@ const FoodList = ({foods}) => {
         return(
             <li key={index} className="foodList wrap">
                 <div className="fooditem">
-                    <Food food={food}/>
+                    <Food food={food} onSelectedUpdate={onSelectedUpdate}/>
                 </div>
             </li>
         )
@@ -22,9 +24,14 @@ const FoodList = ({foods}) => {
 
 
     return(
+        <div>
         <ul className="components-list wrap">
             {foodElements}
         </ul>
+        <li>
+            {select ? <SelectedFood select={select}/> : null}
+        </li>
+        </div>
     )
 
 }

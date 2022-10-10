@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-const Food = ({food}) => {
+const Food = ({food, onSelectedUpdate}) => {
 
 
     if(!food){
@@ -10,6 +10,11 @@ const Food = ({food}) => {
             
         )
     }
+
+    const handleClick = () => {
+        onSelectedUpdate((food))
+    }
+
 
     const allRecipes = food.recipes.map((recipe, index) => {
         return(
@@ -33,6 +38,7 @@ const Food = ({food}) => {
             <Link to={url} className="name">
                 {food.name}
             </Link>
+            <button onClick={handleClick}>Add to list</button>
         </h1>
         </Fragment>
     )
