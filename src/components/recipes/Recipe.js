@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 
 
 const Recipe = ({recipe}) => {
@@ -9,16 +10,16 @@ const Recipe = ({recipe}) => {
         )
     }
 
-    // const allFoods = recipe.foods.map((food, index) => {
-    //     return <div key={index}>
-    //         {food.name}
-    //     </div>
-    // })
+ 
+
+    const url = "/recipes/" + recipe.id;
 
     return(
         <Fragment>
             <h1>
-                {recipe.name}
+                <Link to={url} className="name">
+                    {recipe.name}
+                </Link>
             </h1>
         </Fragment>
     )
