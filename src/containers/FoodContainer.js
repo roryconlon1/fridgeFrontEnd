@@ -6,11 +6,15 @@ import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import FoodDetail from "../components/foods/FoodDetail";
+import FoodsForm from "../components/foods/FoodsForm";
+import LastestFood from "../components/foods/LastestFood";
 
 const FoodContainer = ({foodElements}) => {
 
 
     const [foods, setFoods] = useState([])
+    const [filter, setFilter] = useState("")
+    const [filterFoods, setfilterFoods] = useState([])
 
     useEffect(() => {
         const request = new Request()
@@ -19,6 +23,13 @@ const FoodContainer = ({foodElements}) => {
                 setFoods(data)
             })
     }, [])
+
+    useEffect (() => {
+        const filteredResults = foods.filter(food => {
+            return food.name.toLowerCase().includes(filter.toLowerCase())
+        })
+        setfilterFoods(filteredResults)
+    }, [filter])
 
     const findFoodById = (id) => {
         return foods.find((food) => {
@@ -32,9 +43,15 @@ const FoodContainer = ({foodElements}) => {
         return <FoodDetail food={foundFood} />
     }
 
+    const handleChange = (filtervalue) => {
+        setFilter(filtervalue)
+    }
+
 
     return (
         <div>
+            <FoodsForm filter={filter} handleChange={handleChange}/>
+            <LastestFood foods={filterFoods}/>
             <Routes>
                 <Route path=":id" element={<FoodDetailWrapper/>} />
                 <Route path="/" element={<FoodList foods={foods} />} />
