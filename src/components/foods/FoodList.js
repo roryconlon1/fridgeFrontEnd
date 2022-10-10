@@ -20,6 +20,8 @@ const FoodList = ({foods, onSelectedUpdate, select}) => {
             </li>
         )
     })
+
+    
     
 
 

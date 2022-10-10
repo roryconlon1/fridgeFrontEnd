@@ -16,15 +16,15 @@ const Food = ({food, onSelectedUpdate}) => {
     }
 
 
-    const allRecipes = food.recipes.map((recipe, index) => {
-        return(
-            <div key={index}>
-                <ul>
-                    <i>{recipe.name}</i>
-                </ul>
-            </div>
-        )
-    })
+    // const allRecipes = food.recipes.map((recipe, index) => {
+    //     return(
+    //         <div key={index}>
+    //             <ul>
+    //                 <i>{recipe.name}</i>
+    //             </ul>
+    //         </div>
+    //     )
+    // })
 
 
     const url = "/foods/" + food.id; 

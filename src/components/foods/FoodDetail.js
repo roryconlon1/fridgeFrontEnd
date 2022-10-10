@@ -17,7 +17,7 @@ const FoodDetail = ({ food }) => {
 
     return (
         <div className="foodItem">
-            <Food food={food} />
+            <Food food={food}/>
             <h3>Recipes containing {food.name}: </h3>
             {allRecipes}
         </div>

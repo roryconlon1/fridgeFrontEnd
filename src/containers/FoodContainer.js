@@ -51,6 +51,7 @@ const FoodContainer = ({foodElements}) => {
 
     const onSelectedUpdate = (newSelected)=> {
         const copySelected = [...select, newSelected]
+        console.log(copySelected);
         setSelected(copySelected)
     };
 
