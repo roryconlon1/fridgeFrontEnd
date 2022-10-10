@@ -26,7 +26,7 @@ const SelectedFood = (({select, recipes}) => {
 
 
 
-
+// help me
     // const allRecipes = (commonRecipes.length === 0) ? null : select.recipes.map((recipe, index) => {
     //     return (
     //         <div key={index}>
