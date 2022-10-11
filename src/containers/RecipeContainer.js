@@ -16,11 +16,11 @@ const RecipeContainer = ({recipes, RecipeDetailWrapper, filterRecipe, handleChan
 
     return(
         <div>
-            <RecipesForm filter={filter} handleChange={handleChange}/>
             <LastestRecipe recipes={filterRecipe}/>
             <Routes>
                 <Route path="/" element={<RecipeList recipes={recipes}/>}></Route>
                 <Route path=":id" element={<RecipeDetailWrapper/>}/>
+                <Route path="/new" element={<RecipesForm recipes={recipes}/>}/>
             </Routes>
         </div>
     )

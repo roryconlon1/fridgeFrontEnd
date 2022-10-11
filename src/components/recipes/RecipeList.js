@@ -1,5 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Recipe from "./Recipe";
+import { Link } from "react-router-dom";
+import RecipeForm from "./RecipeForm";
 
 const RecipeList = ({recipes}) => {
     if(recipes.length === 0){
@@ -16,10 +18,15 @@ const RecipeList = ({recipes}) => {
         </li>
     })
 
+    const url = "/recipes/new"
+
     return(
+        <div>
         <ul className="components-list wrap">
             {recipeElements}
         </ul>
+        <a href="/recipes/new">Create a new Recipe</a>
+        </div>
     )
 }
 

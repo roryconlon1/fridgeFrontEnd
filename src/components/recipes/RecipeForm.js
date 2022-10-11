@@ -1,25 +1,34 @@
-// import React from "react";
+import React, { useState } from "react";
 
-// const FoodsForm = ({filter, handleChange}) => {
+const RecipeForm = ({recipes}) => {
 
-//     const handleInputChange = (event) => {
-//         const filterValue=event.target.value
-//         handleChange(filterValue)
-//     }
+    if(!recipes){
+        return "Loading...."
+    }
 
-//     const handleSubmit = (event) => {
-//         event.preventDefault()
-//     }
+    const [stateRecipe, setStateRecipe] = useState ={
+        name: "",
+        recipeType: null,
+        coookTime: 0,
+        method: ""
+    }
 
-//     return(      
-//         <form onSubmit={handleSubmit}>              
-//         <input onChange={handleInputChange}
-//             type="text"
-//             value={filter}
-//             placeholder="Search through Ingredients" 
-//         />
-//     </form>
-//     )
-// }
 
-// export default FoodsForm;
+
+
+
+
+    return(
+        <div>
+            Hello
+            <form>
+                <input type="text" placeholder="Name" name="name"/>
+                <input type="number" placeholder="CookTime" name="cookTime"/>
+                <input type="text" placeholder="Method" name="method"/>
+            </form>
+        </div>
+    )
+}
+
+
+export default RecipeForm;
