@@ -42,7 +42,7 @@ const FoodContainer = ({foodElements, recipes}) => {
     const FoodDetailWrapper = () => {
         const { id } = useParams();
         let foundFood = findFoodById(id)
-        return <FoodDetail food={foundFood} />
+        return <FoodDetail food={foundFood} handleDelete={handleDelete}/>
     }
 
     const handleChange = (filtervalue) => {
@@ -55,13 +55,22 @@ const FoodContainer = ({foodElements, recipes}) => {
         setSelected(copySelected)
     };
 
+    const handleDelete = (id) => {
+        const request = new Request();
+        const url = "/api/foods/" + id;
+        request.delete(url)
+        .then(() => {
+            window.location = "/foods"
+        })
+    }
+
 
     return (
         <div>
             <FoodsForm filter={filter} handleChange={handleChange}/>
             <LastestFood foods={filterFoods}/>
             <Routes>
-                <Route path=":id" element={<FoodDetailWrapper/>} />
+                <Route path=":id" element={<FoodDetailWrapper />} />
                 <Route path="/" element={<FoodList foods={foods} onSelectedUpdate={onSelectedUpdate} select={select} recipes={recipes}/>} />
             </Routes>
         </div>

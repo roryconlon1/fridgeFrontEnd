@@ -3,6 +3,7 @@
   list-style: none;
   margin: 0;
   padding: 0%;
+  background-color: #394a51;
 }
 
 .App-logo {
@@ -16,12 +17,28 @@
   }
 }
 
+.components {
+  background-color: #394a51;
+  margin: 4px;
+  padding: 20px;
+  font-size: 1.3em;
+}
+
+.footer {
+position: fixed;
+left: 0%;
+bottom: 0%;
+width: 100%;
+background-color: #394a51;
+color: #394a51;
+}
+
 .components-list {
-  margin: 10px;
   padding: 10px;
   list-style: none;
   display: flex;
   flex-direction: row;
+  background-color: #394a51;
 }
 
 .wrap    { 
@@ -30,17 +47,18 @@
 } 
 
 .wrap li {
-  background: green;
+  background: #7fa99b;
   margin: 4px;
-  padding: 10px;
-  font-size: 1.3em;
+  padding: 7px;
+  font-size: 0.7em;
+  border-radius: 5%;
 }
 
 .foodItem {
   /* padding: 5px;
   width: 100px;
   height: 100px; */
-  margin: 10px;
+  /* margin: 10px; */
   border-radius: 10%;
 
   
@@ -51,15 +69,22 @@
   text-align: center; */
 }
 
+.inputBox {
+  margin: 0px;
+  padding: 5px;
+  font-size: .7em;
+  width: 24%;
+}
 
 .navBar {
   list-style-type: none;
 margin: 0;
-padding: 50px;
+padding: 0px;
 overflow: hidden;
 display: flex;
 justify-content: center;
-background-color: #92A8D1;
+background-color: #7fa99b;
+font-size: 1.5em;
 
 }
 
@@ -76,7 +101,7 @@ font-size: 2em;
 }
 
 .nav_id:hover {
-  background-color: #a7b9da;
+  background-color: #afc9c0;
 }
 
 .App-header {
