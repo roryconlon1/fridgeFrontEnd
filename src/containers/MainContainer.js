@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import RecipeDetail from "../components/recipes/RecipeDetail";
 import Request from "../helpers/request";
+import FoodDetail from "../components/foods/FoodDetail";
 
 
 const MainContainer = () => {
@@ -17,6 +18,7 @@ const MainContainer = () => {
     const [recipes, setRecipes] = useState([]);
     const [filter, setFilter] =useState("");
     const [filterRecipe, setfilterRecipe] = useState([]);
+
 
     useEffect(() => {
         const request = new Request()
@@ -46,7 +48,60 @@ const MainContainer = () => {
     const RecipeDetailWrapper = () => {
         const { id } = useParams();
         let foundRecipe = findRecipeById(id)
-        return <RecipeDetail recipe={foundRecipe}/>
+        return <RecipeDetail recipe={foundRecipe} foods={foods}/>
+    }
+
+    // 
+
+    const [foods, setFoods] = useState([])
+    const [foodFilter, setFoodFilter] = useState("")
+    const [filterFoods, setfilterFoods] = useState([])
+    const [select, setSelected] = useState([])
+
+    useEffect(() => {
+        const request = new Request()
+        request.get("/api/foods")
+            .then((data) => {
+                setFoods(data)
+            })
+    }, [])
+
+    useEffect (() => {
+        const filteredResults = foods.filter(food => {
+            return food.name.toLowerCase().includes(filter.toLowerCase())
+        })
+        setfilterFoods(filteredResults)
+    }, [filter])
+
+    const findFoodById = (id) => {
+        return foods.find((food) => {
+            return food.id === parseInt(id)
+        })
+    }
+
+    const FoodDetailWrapper = () => {
+        const { id } = useParams();
+        let foundFood = findFoodById(id)
+        return <FoodDetail food={foundFood} handleDelete={handleDelete}/>
+    }
+
+    const handleFoodChange = (filtervalue) => {
+        setFilter(filtervalue)
+    }
+
+    const onSelectedUpdate = (newSelected)=> {
+        const copySelected = [...select, newSelected]
+        console.log(copySelected);
+        setSelected(copySelected)
+    };
+
+    const handleDelete = (id) => {
+        const request = new Request();
+        const url = "/api/foods/" + id;
+        request.delete(url)
+        .then(() => {
+            window.location = "/foods"
+        })
     }
 
     return (
@@ -55,39 +110,11 @@ const MainContainer = () => {
             <NavBar />
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
-                <Route path="/foods/*" element={<FoodContainer recipes={recipes}/>} />
-                <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} />} />
+                <Route path="/foods/*" element={<FoodContainer recipes={recipes} filter={foodFilter} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} select={select}/>} />
+                <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} foods={foods} />} />
             </Routes>
         </div>
     )
 }
 
 export default MainContainer;
-
-
-
-
-
-//     return(
-//         <div>
-//             <RecipesForm filter={filter} handleChange={handleChange}/>
-//             <LastestRecipe recipes={filterRecipe}/>
-//             <Routes>
-//                 <Route path="/" element={<RecipeList recipes={recipes}/>}></Route>
-//                 <Route path=":id" element={<RecipeDetailWrapper/>}/>
-//             </Routes>
-//         </div>
-//     )
-// }
-
-// import React from "react";
-// import { useState } from "react";
-// import { useEffect } from "react";
-// import { Route, useParams } from "react-router-dom";
-// import { Routes } from "react-router-dom";
-// import RecipeDetail from "../components/recipes/RecipeDetail";
-// import RecipeList from "../components/recipes/RecipeList";
-// import Request from "../helpers/request";
-// import RecipesForm from "../components/foods/FoodsForm";
-// import LastestRecipe from "../components/recipes/LastestRecipe";
-

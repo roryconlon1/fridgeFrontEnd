@@ -38,8 +38,8 @@ const Food = ({food, onSelectedUpdate}) => {
             <Link to={url} className="name">
                 {food.name}
             </Link>
+            </h1>
             <button onClick={handleClick}>Add to list</button>
-        </h1>
         </Fragment>
     )
 }

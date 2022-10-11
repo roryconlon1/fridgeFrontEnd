@@ -12,11 +12,12 @@ const RecipesForm = ({filter, handleChange}) => {
     }
 
     return(      
-        <form onSubmit={handleSubmit}>              
+        <form onSubmit={handleSubmit} className="components">              
         <input onChange={handleInputChange}
             type="text"
             value={filter}
             placeholder="Search through Ingredients" 
+            className="inputBox"
         />
     </form>
     )

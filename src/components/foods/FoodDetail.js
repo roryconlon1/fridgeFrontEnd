@@ -1,7 +1,7 @@
 import React from "react";
 import Food from "./Food";
 
-const FoodDetail = ({ food }) => {
+const FoodDetail = ({ food, handleDelete }) => {
 
     if (!food) {
         return <p>Loading...</p>
@@ -15,11 +15,16 @@ const FoodDetail = ({ food }) => {
         )
     })
 
+    const onDelete = () => {
+        handleDelete(food.id)
+    }
+
     return (
         <div className="foodItem">
             <Food food={food}/>
             <h3>Recipes containing {food.name}: </h3>
             {allRecipes}
+            <button onClick={(onDelete)}>Delete {food.name}</button>
         </div>
     )
 
