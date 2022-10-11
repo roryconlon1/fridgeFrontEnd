@@ -20,9 +20,18 @@ class Request {
         })
     }
 
+    put(url){
+        return fetch(url, {
+            method: "PUT",
+            headers: {'Content-type': 'application/json'}
+        })
+    
+    }
 
 
 
+
+    
 
 }
 
