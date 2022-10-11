@@ -18,6 +18,7 @@ const MainContainer = () => {
     const [filter, setFilter] =useState("");
     const [filterRecipe, setfilterRecipe] = useState([]);
 
+
     useEffect(() => {
         const request = new Request()
         request.get("/api/recipes")
@@ -49,13 +50,17 @@ const MainContainer = () => {
         return <RecipeDetail recipe={foundRecipe}/>
     }
 
+    // 
+
+    
+
     return (
 
         <div>
             <NavBar />
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
-                <Route path="/foods/*" element={<FoodContainer recipes={recipes}/>} />
+                <Route path="/foods/*" element={<FoodContainer recipes={recipes} />} />
                 <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} />} />
             </Routes>
         </div>
@@ -63,32 +68,3 @@ const MainContainer = () => {
 }
 
 export default MainContainer;
-
-
-
-
-
-//     return(
-//         <div>
-//             <RecipesForm filter={filter} handleChange={handleChange}/>
-//             <LastestRecipe recipes={filterRecipe}/>
-//             <Routes>
-//                 <Route path="/" element={<RecipeList recipes={recipes}/>}></Route>
-//                 <Route path=":id" element={<RecipeDetailWrapper/>}/>
-//             </Routes>
-//         </div>
-//     )
-// }
-
-// import React from "react";
-// import { useState } from "react";
-// import { useEffect } from "react";
-// import { Route, useParams } from "react-router-dom";
-// import { Routes } from "react-router-dom";
-// import RecipeDetail from "../components/recipes/RecipeDetail";
-// import RecipeList from "../components/recipes/RecipeList";
-// import Request from "../helpers/request";
-// import RecipesForm from "../components/foods/FoodsForm";
-// import LastestRecipe from "../components/recipes/LastestRecipe";
-
-//hello

@@ -1,15 +1,14 @@
 import React, { memo, useState } from 'react'
 
-const SelectedFood = (({select, recipes}) => {
+const SelectedFood = (({ select, recipes }) => {
 
 
     const showSelected = select.map((item, index) => {
         return <div key={index}>{item.name}</div>
     })
-    console.log(select);
 
     const allRecipeId = select.map((food) => {
-        return food.recipes.map ((recipe) => {
+        return food.recipes.map((recipe) => {
             return recipe.id
         })
     })
@@ -19,40 +18,29 @@ const SelectedFood = (({select, recipes}) => {
     }, allRecipeId[0]);
 
     const recipesId = recipes.map((recipe) => {
-        if (commonRecipes && commonRecipes.includes(recipe.id)){
+        if (commonRecipes && commonRecipes.includes(recipe.id)) {
             return recipe.name
         }
     })
 
+    const allRecipes = recipesId.map((recipe, index) => {
+        return (
+            <li>
+                {recipe}
+            </li>
+        )
+    })
 
 
-// help me
-    // const allRecipes = (commonRecipes.length === 0) ? null : select.recipes.map((recipe, index) => {
-    //     return (
-    //         <div key={index}>
-                
-    //             <h4><i>{recipe.name}</i></h4>
-    //         </div>
-    //     )
-    // })
+    return (
+        <div className='components'>Selected Food:
+            <p></p>
+            {showSelected}
+            <p></p>
+            {allRecipes}
+        </div>
 
-    // const allRecipes = () => {
-    //     if(parseInt(recipes.id) === parseInt(commonRecipes)){
-    //         return recipes.name
-    //     }
-    // }
-
-
-  return (
-    <div>SelectedFood
-        {showSelected}
-        {/* <p>{allRecipes}</p> */}
-        <p>{recipesId}</p>
-        {/* {recipes.name} */}
-        {/* {commonRecipes} */}
-    </div>
-    
-  )
+    )
 })
 
 
