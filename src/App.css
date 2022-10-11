@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
   list-style: none;
   margin: 0;
@@ -34,14 +34,14 @@
   margin: 4px;
   padding: 10px;
   font-size: 1.3em;
-}
+} */
 
-.foodItem {
+/* .foodItem { */
   /* padding: 5px;
   width: 100px;
   height: 100px; */
-  margin: 10px;
-  border-radius: 10%;
+  /* margin: 10px;
+  border-radius: 10%; */
 
   
   /* line-height: 100px;
@@ -49,10 +49,10 @@
   font-weight: bold;
   font-size: 2em;
   text-align: center; */
-}
+/* } */
 
 
-.navBar {
+/* .navBar {
   list-style-type: none;
 margin: 0;
 padding: 50px;
@@ -102,4 +102,4 @@ font-size: 2em;
     transform: rotate(360deg);
   }
 
-}
+} */

@@ -10,6 +10,9 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import RecipeDetail from "../components/recipes/RecipeDetail";
 import Request from "../helpers/request";
+import Header from "../Style/Header";
+import AboutUs from "../Style/AboutUs";
+
 
 
 const MainContainer = () => {
@@ -49,15 +52,20 @@ const MainContainer = () => {
         return <RecipeDetail recipe={foundRecipe}/>
     }
 
-    return (
 
-        <div>
+
+    return (
+        <div className="sum">
+        <div className="logo">
             <NavBar />
+            <Header/>
+            <AboutUs/>
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
                 <Route path="/foods/*" element={<FoodContainer recipes={recipes}/>} />
                 <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} />} />
             </Routes>
+        </div>
         </div>
     )
 }
