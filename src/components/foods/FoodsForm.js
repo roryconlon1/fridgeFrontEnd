@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const FoodsForm = ({onCreate, Foods}) => {
+const FoodsForm = ({onCreate}) => {
 
     const [stateIngredient, setStateIngredient] = useState ({
         name: "",
