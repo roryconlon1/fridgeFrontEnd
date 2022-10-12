@@ -11,7 +11,7 @@ import RecipeSearchBar from "../components/recipes/RecipeSearchBar";
 import SearchBarDisplayRecipe from "../components/recipes/SearchBarDisplayRecipe";
 
 
-const RecipeContainer = ({recipes, RecipeDetailWrapper, filterRecipe, handleChange, foods, onCreate}) => {
+const RecipeContainer = ({RecipeDetailWrapper, filterRecipe, handleChange, foods, onCreate}) => {
 
 
 

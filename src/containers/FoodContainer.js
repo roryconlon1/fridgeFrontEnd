@@ -11,7 +11,7 @@ import SelectedFood from "../components/foods/SelectedFood";
 import FoodDetail from "../components/foods/FoodDetail";
 import FoodSearchBar from "../components/foods/FoodSearchBar";
 
-const FoodContainer = ({foodElements, recipes, filter, handleChange, foods, onSelectedUpdate, select, filterFoods, FoodDetailWrapper, onCreate}) => {
+const FoodContainer = ({recipes, handleChange, foods, onSelectedUpdate, select, filterFoods, FoodDetailWrapper, onCreate}) => {
 
 
 

@@ -9,23 +9,6 @@ const RecipeDetail = ({recipe, foods}) => {
         return <p>Loading . . .</p>
     }
 
-    // const [stateFood, setStateFood] = useState({
-    //     id: recipe.id,
-    //     name: recipe.name,
-    //     recipeType: recipe.recipeType,
-    //     cookTime: recipe.cookTime,
-    //     method: recipe.method,
-    //     Ingredients: [recipe.foods]
-    // })
-
-    // const updateIngredient = (event) => {
-    //     let propertyname = event.target.name;
-    //     let copiedFood = {...stateFood};
-    //     Ingredients.push(event.target.value)
-    //     copiedFood[propertyname] = event.target.value;
-    //     setStateFood(copiedFood)
-    // }
-
     const allFoods = recipe.foods.map((food, index) => {
         return <div key={index}>
             {food.name}
