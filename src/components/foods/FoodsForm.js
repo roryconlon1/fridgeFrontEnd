@@ -5,7 +5,7 @@ const FoodsForm = ({ onCreate }) => {
     const [stateIngredient, setStateIngredient] = useState({
         name: "",
         calories: 0,
-        footType: "",
+        foodType: "",
         pantryFood: false,
         fridgeFood: false
     })
@@ -28,7 +28,7 @@ const FoodsForm = ({ onCreate }) => {
                 <input type="text" placeholder="Name" name="name" onChange={handleChange} value={stateIngredient.name} />
                 <input type="number" placeholder="Calories" name="calories" onChange={handleChange} value={parseInt(stateIngredient.calories)} />
                 <label for="foods">Choose a Food Type:</label>
-                <select id="foods" name="foods">
+                <select id="foods" name="foodType" onChange={handleChange}>
                     <option value="CARBOHYDRATE">Carbohydrate</option>
                     <option value="PROTEIN">Protein</option>
                     <option value="FAT">Fat</option>
