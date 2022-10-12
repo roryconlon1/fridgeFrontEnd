@@ -1,7 +1,7 @@
 import React from "react";
 import Recipe from "./Recipe";
 
-const LastestRecipe = ({recipes}) => {    
+const SearchBarDisplayRecipe = ({recipes}) => {    
     const recipeItems = recipes.map((recipe, index) => {
         return <Recipe recipe={recipe} key = {index}/>  
     })
@@ -11,11 +11,11 @@ const LastestRecipe = ({recipes}) => {
     return (
         <div>
             <ul>
-                {recipeItems}
+                {/* {recipeItems} */}
             </ul>
         </div>
     )
 }
 
 
-export default LastestRecipe;
+export default SearchBarDisplayRecipe;

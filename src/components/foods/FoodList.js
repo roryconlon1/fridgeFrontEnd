@@ -30,9 +30,9 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes}) => {
         <ul className="components-list wrap">
             {foodElements}
         </ul>
-        {/* <li>
+        <li>
             {select ? <SelectedFood select={select} recipes={recipes}/> : null}
-        </li> */}
+        </li>
         <a href={url}>Create a new Recipe</a>
         </div>
     )

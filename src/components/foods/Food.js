@@ -6,7 +6,7 @@ const Food = ({food, onSelectedUpdate}) => {
 
     if(!food){
         return(
-            <p>Loading...</p>
+            <p>Loadsing...</p>
             
         )
     }

@@ -25,6 +25,7 @@ const MainContainer = () => {
         request.get("/api/recipes")
             .then((data) => {
                 setRecipes(data)
+                setfilterRecipe(data);
             })
     }, [])
 
@@ -78,7 +79,8 @@ const MainContainer = () => {
         const request = new Request()
         request.get("/api/foods")
             .then((data) => {
-                setFoods(data)
+                setFoods(data);
+                setfilterFoods(data);
             })
     }, [])
 
@@ -126,7 +128,7 @@ const MainContainer = () => {
             <NavBar />
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
-                <Route path="/foods/*" element={<FoodContainer recipes={recipes} filter={foodFilter} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} onCreate={handlePostFood} select={select}/>} />
+                <Route path="/foods/*" element={<FoodContainer recipes={recipes} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} onCreate={handlePostFood} select={select}/>} />
                 <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} foods={foods} onCreate={handlePost}/>} />
             </Routes>
         </div>
