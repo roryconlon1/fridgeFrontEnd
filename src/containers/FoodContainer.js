@@ -14,7 +14,6 @@ const FoodContainer = ({foodElements, recipes, filter, handleChange, foods, onSe
 
     return (
         <div>
-            <FoodsForm filter={filter} handleChange={handleChange}/>
             <LastestFood foods={filterFoods}/>
             <Routes>
                 <Route path=":id" element={<FoodDetailWrapper />} />

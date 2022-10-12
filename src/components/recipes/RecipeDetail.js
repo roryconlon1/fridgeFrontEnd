@@ -69,6 +69,9 @@ const RecipeDetail = ({recipe, foods}) => {
     return(
         <div className="foodItem">
             <h1>{recipe.name}</h1>
+            <h2>{recipe.cookTime}</h2>
+            <h3>{recipe.method}</h3>
+            <h3>{recipe.recipeType}</h3>
             <h2>Ingredients :</h2>
             <h3><i>{allFoods}</i></h3>
             <button onClick={(onDelete)}>Delete Recipe</button>

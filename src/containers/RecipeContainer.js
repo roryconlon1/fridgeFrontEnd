@@ -6,10 +6,10 @@ import { Routes } from "react-router-dom";
 import RecipeDetail from "../components/recipes/RecipeDetail";
 import RecipeList from "../components/recipes/RecipeList";
 import Request from "../helpers/request";
-import RecipesForm from "../components/foods/FoodsForm";
 import LastestRecipe from "../components/recipes/LastestRecipe";
+import RecipeForm from "../components/recipes/RecipeForm";
 
-const RecipeContainer = ({recipes, RecipeDetailWrapper, filterRecipe, handleChange, filter}) => {
+const RecipeContainer = ({recipes, RecipeDetailWrapper, filterRecipe, handleChange, filter, foods, onCreate}) => {
 
 
 
@@ -20,7 +20,7 @@ const RecipeContainer = ({recipes, RecipeDetailWrapper, filterRecipe, handleChan
             <Routes>
                 <Route path="/" element={<RecipeList recipes={recipes}/>}></Route>
                 <Route path=":id" element={<RecipeDetailWrapper/>}/>
-                <Route path="/new" element={<RecipesForm recipes={recipes}/>}/>
+                <Route path="/new" element={<RecipeForm foods={foods} onCreate={onCreate}/>}/>
             </Routes>
         </div>
     )

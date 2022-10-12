@@ -1,16 +1,25 @@
 import React, { useState } from "react";
 
-const RecipeForm = ({recipes}) => {
+const RecipeForm = ({onCreate}) => {
 
-    if(!recipes){
-        return "Loading...."
-    }
 
-    const [stateRecipe, setStateRecipe] = useState ={
+    const [stateRecipe, setStateRecipe] = useState ({
         name: "",
         recipeType: null,
-        coookTime: 0,
+        cookTime: 0,
         method: ""
+    })
+
+    const handleChange = (event) => {
+        let propertyName = event.target.name;
+        let copyRecipe = {...stateRecipe}
+        copyRecipe[propertyName] = event.target.value;
+        setStateRecipe(copyRecipe);
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onCreate(stateRecipe);
     }
 
 
@@ -21,11 +30,13 @@ const RecipeForm = ({recipes}) => {
     return(
         <div>
             Hello
-            <form>
-                <input type="text" placeholder="Name" name="name"/>
-                <input type="number" placeholder="CookTime" name="cookTime"/>
-                <input type="text" placeholder="Method" name="method"/>
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder="Name" name="name" onChange={handleChange} value={stateRecipe.name}/>
+                <input type="number" placeholder="Cook Time" name="cookTime" onChange={handleChange} value={parseInt(stateRecipe.cookTime)}/>
+                <input type="text" placeholder="Method" name="method" onChange={handleChange} value={stateRecipe.method}/>
+                <button type="submit">Save</button>
             </form>
+            <p>Hello</p>
         </div>
     )
 }

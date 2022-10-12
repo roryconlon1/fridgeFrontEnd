@@ -51,6 +51,14 @@ const MainContainer = () => {
         return <RecipeDetail recipe={foundRecipe} foods={foods}/>
     }
 
+    const handlePost = (recipe) => {
+        const request = new Request();
+        request.post('/api/recipes', recipe)
+        .then(() => {
+          window.location = '/recipes'
+        })
+      }
+
     // 
 
     const [foods, setFoods] = useState([])
@@ -111,7 +119,7 @@ const MainContainer = () => {
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
                 <Route path="/foods/*" element={<FoodContainer recipes={recipes} filter={foodFilter} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} select={select}/>} />
-                <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} foods={foods} />} />
+                <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} foods={foods} onCreate={handlePost}/>} />
             </Routes>
         </div>
     )

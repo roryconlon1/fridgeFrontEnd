@@ -25,7 +25,7 @@ const RecipeList = ({recipes}) => {
         <ul className="components-list wrap">
             {recipeElements}
         </ul>
-        <a href="/recipes/new">Create a new Recipe</a>
+        <a href={url}>Create a new Recipe</a>
         </div>
     )
 }
