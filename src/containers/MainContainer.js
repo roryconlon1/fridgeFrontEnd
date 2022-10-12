@@ -118,7 +118,7 @@ const MainContainer = () => {
             <NavBar />
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
-                <Route path="/foods/*" element={<FoodContainer recipes={recipes} filter={foodFilter} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} select={select}/>} />
+                <Route path="/foods/*" element={<FoodContainer recipes={recipes} filter={foodFilter} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} onCreate={handlePost} select={select}/>} />
                 <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} foods={foods} onCreate={handlePost}/>} />
             </Routes>
         </div>

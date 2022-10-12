@@ -22,7 +22,7 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes}) => {
     })
 
 
-    
+    const url = "/foods/new"
 
 
     return(
@@ -33,6 +33,7 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes}) => {
         <li>
             {select ? <SelectedFood select={select} recipes={recipes}/> : null}
         </li>
+        <a href={url}>Create a new Recipe</a>
         </div>
     )
 
