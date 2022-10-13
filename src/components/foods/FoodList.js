@@ -3,7 +3,7 @@ import Select from "react-select/lib/Select";
 import Food from "./Food";
 import SelectedFood from "./SelectedFood";
 
-const FoodList = ({foods, onSelectedUpdate, select, recipes}) => {
+const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected}) => {
 
     if(foods.length === 0){
         return(
@@ -31,7 +31,7 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes}) => {
             {foodElements}
         </ul>
         <li>
-            {select ? <SelectedFood select={select} recipes={recipes}/> : null}
+            {select ? <SelectedFood select={select} recipes={recipes} resetSelected={resetSelected}/> : null}
         </li>
         <a href={url}>Create a new Recipe</a>
         </div>

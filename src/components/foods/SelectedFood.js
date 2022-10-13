@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react'
 
-const SelectedFood = (({ select, recipes }) => {
+const SelectedFood = (({ select, recipes, resetSelected }) => {
 
 
     const showSelected = select.map((item, index) => {
@@ -31,6 +31,12 @@ const SelectedFood = (({ select, recipes }) => {
         )
     })
 
+    const resetClick = () =>{
+        resetSelected()
+    }
+
+
+
 
     return (
         <div className='components'>Selected Food:
@@ -38,6 +44,8 @@ const SelectedFood = (({ select, recipes }) => {
             {showSelected}
             <p></p>
             {allRecipes}
+
+            <button onClick={resetClick}>RESET FILTER</button>
         </div>
 
     )
