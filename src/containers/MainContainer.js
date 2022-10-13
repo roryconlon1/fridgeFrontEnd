@@ -123,7 +123,6 @@ const MainContainer = () => {
     //Food
     const onSelectedUpdate = (newSelected) => {
         const copySelected = [...select, newSelected]
-        console.log(copySelected);
         setSelected(copySelected)
     };
 
