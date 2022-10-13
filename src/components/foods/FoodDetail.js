@@ -21,7 +21,7 @@ const FoodDetail = ({ food, handleDelete }) => {
 
     return (
         <div className="foodItem">
-            <Food food={food}/>
+            <h1>{food.name}</h1>
             <h3>Recipes containing {food.name}: </h3>
             {allRecipes}
             <button onClick={(onDelete)}>Delete {food.name}</button>

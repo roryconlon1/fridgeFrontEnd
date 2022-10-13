@@ -39,7 +39,7 @@ const Food = ({food, onSelectedUpdate}) => {
                 {food.name}
             </Link>
             </h1>
-            <button onClick={handleClick}>Add to list</button>
+            <button onClick={handleClick}>Add {food.name} to list</button>
         </Fragment>
     )
 }
