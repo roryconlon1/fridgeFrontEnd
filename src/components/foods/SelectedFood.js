@@ -2,6 +2,8 @@ import React, { memo, useState } from 'react'
 
 const SelectedFood = (({ select, recipes, resetSelected }) => {
 
+    const [allRecipesForAllIngredients, setAllRecipesForAllIngredients] = useState([])
+
 
     const showSelected = select.map((item, index) => {
         return <div key={index}>{item.name}</div>
@@ -35,6 +37,12 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
         resetSelected()
     }
 
+    const allRecipesForSelectedIngredients = select.map((food) => {
+        return food.recipes.map((recipe) => {
+            return recipe.name
+        })
+    })
+
 
 
 
@@ -44,6 +52,9 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
             {showSelected}
             <p></p>
             {allRecipes}
+            <p></p>
+            {allRecipesForSelectedIngredients}
+
 
             <button onClick={resetClick}>RESET FILTER</button>
         </div>
