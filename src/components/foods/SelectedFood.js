@@ -35,21 +35,27 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
 
     const resetClick = () =>{
         resetSelected()
+        setAllRecipesForAllIngredients([])
     }
+
+
 
     const allRecipesForSelectedIngredients = select.map((food) => {
         return food.recipes.map((recipe) => {
-            if(!allRecipesForAllIngredients.includes(recipe)){
+            const alreadyExists = allRecipesForAllIngredients.some(value => value.id == recipe.id)
+            if(!alreadyExists){
                 const copyAll = [...allRecipesForAllIngredients, recipe]
                 setAllRecipesForAllIngredients(copyAll)
             }
         })
     })
 
+
+    
     const everyRecipeElemnt = allRecipesForAllIngredients.map((recipe, index) => {
             return <li key={index}>
-                {recipe.name}
-            </li>
+            {recipe.name}
+        </li>
         })
     
 
@@ -66,7 +72,6 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
             <ul>
                 {everyRecipeElemnt}
             </ul>
-            {/* {allRecipesForSelectedIngredients} */}
 
 
             <button onClick={resetClick}>RESET FILTER</button>

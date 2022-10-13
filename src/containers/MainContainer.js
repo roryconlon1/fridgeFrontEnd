@@ -122,6 +122,10 @@ const MainContainer = () => {
 
     //Food
     const onSelectedUpdate = (newSelected) => {
+        const alreadyExists = select.some(value => value.id == newSelected.id)
+        if(alreadyExists){
+            return;
+        }
         const copySelected = [...select, newSelected]
         setSelected(copySelected)
     };
