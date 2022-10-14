@@ -7,7 +7,8 @@ const RecipeForm = ({onCreate}) => {
         name: "",
         recipeType: "",
         cookTime: 0,
-        method: ""
+        method: "",
+        image: ""
     })
 
     const handleChange = (event) => {
@@ -43,6 +44,7 @@ const RecipeForm = ({onCreate}) => {
                 </select>
                 <input type="number" placeholder="Cook Time" name="cookTime" onChange={handleChange} value={parseInt(stateRecipe.cookTime)}/>
                 <input type="text" placeholder="Method" name="method" onChange={handleChange} value={stateRecipe.method}/>
+                <input type="text" placeholder="Image" name="image" onChange={handleChange} value={stateRecipe.image}/>
                 <button type="submit">Save</button>
             </form>
             <p>Hello</p>
