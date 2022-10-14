@@ -63,6 +63,7 @@ const RecipeDetail = ({recipe, foods}) => {
             <h2>{allCalories}</h2>
             <h3>{recipe.method}</h3>
             <h3>{recipe.recipeType}</h3>
+            <img src={recipe.image}></img>
             <h2>Ingredients :</h2>
             <h3><i>{allFoods}</i></h3>
             <button onClick={(onDelete)}>Delete Recipe</button>
