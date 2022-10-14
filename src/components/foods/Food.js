@@ -39,8 +39,8 @@ const Food = ({food, onSelectedUpdate}) => {
                 {food.name}
             </Link>
             </h1>
-            <img src={food.image}></img>
-            <button onClick={handleClick}>Add {food.name} to list</button>
+            <img src={food.image} alt={food.name}></img>
+            <p><button onClick={handleClick}>Add {food.name} to list</button></p>
         </Fragment>
     )
 }

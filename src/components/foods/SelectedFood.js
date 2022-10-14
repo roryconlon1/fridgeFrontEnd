@@ -33,7 +33,7 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
         )
     })
 
-    const resetClick = () =>{
+    const resetClick = () => {
         resetSelected()
         setAllRecipesForAllIngredients([])
     }
@@ -43,7 +43,7 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
     const allRecipesForSelectedIngredients = select.map((food) => {
         return food.recipes.map((recipe) => {
             const alreadyExists = allRecipesForAllIngredients.some(value => value.id == recipe.id)
-            if(!alreadyExists){
+            if (!alreadyExists) {
                 const copyAll = [...allRecipesForAllIngredients, recipe]
                 setAllRecipesForAllIngredients(copyAll)
             }
@@ -51,27 +51,37 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
     })
 
 
-    
+
     const everyRecipeElemnt = allRecipesForAllIngredients.map((recipe, index) => {
-            return <li key={index}>
+        return <li key={index}>
             {recipe.name}
         </li>
-        })
-    
+    })
+
 
 
 
 
     return (
-        <div className='components'>Selected Food:
-            <p></p>
-            {showSelected}
-            <p></p>
-            {allRecipes}
-            <p></p>
-            <ul>
-                {everyRecipeElemnt}
-            </ul>
+        <div className='components'>
+            <div className='recipe_lists'>
+                <div className='individual_recipe_lists'>
+                    Selected Food:
+                    <p></p>
+                    {showSelected}
+                </div>
+                <div className='individual_recipe_lists'>
+                    <p></p>
+                    All Recipes for all foods selected:
+                    <p></p>
+                    {everyRecipeElemnt}
+                </div>
+                <div className='individual_recipe_lists'>
+                    <p>Recipes where all foods selected are used:</p>
+                    {allRecipes}
+                </div>
+            </div>
+
 
 
             <button onClick={resetClick}>RESET FILTER</button>

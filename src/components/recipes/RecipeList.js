@@ -22,10 +22,10 @@ const RecipeList = ({recipes}) => {
 
     return(
         <div>
+        <a className="new_recipe_food" href={url}>Add a new Recipe</a>
         <ul className="components-list wrap">
             {recipeElements}
         </ul>
-        <a href={url}>Create a new Recipe</a>
         </div>
     )
 }

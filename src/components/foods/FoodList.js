@@ -27,13 +27,13 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected}) => 
 
     return(
         <div>
+        <a className="new_recipe_food" href={url}>Add a new Ingredient</a>
         <ul className="components-list wrap">
             {foodElements}
         </ul>
         <li>
             {select ? <SelectedFood select={select} recipes={recipes} resetSelected={resetSelected}/> : null}
         </li>
-        <a href={url}>Create a new Recipe</a>
         </div>
     )
 
