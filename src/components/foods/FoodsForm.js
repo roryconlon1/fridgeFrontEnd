@@ -7,7 +7,8 @@ const FoodsForm = ({ onCreate }) => {
         calories: 0,
         foodType: "",
         pantryFood: false,
-        fridgeFood: false
+        fridgeFood: false,
+        image: ""
     })
 
     const handleChange = (event) => {
@@ -40,6 +41,7 @@ const FoodsForm = ({ onCreate }) => {
                 <label for="PantryFood">PantryFood</label>
                 <input type="checkbox" id="FridgeFood" placeholder="FridgeFood" name="fridgeFood" onChange={handleChange} value={stateIngredient.fridgeFood} />
                 <label for="FridgeFood">FridgeFood</label>
+                <input type="text" placeholder="Image" name="image" onChange={handleChange} value={stateIngredient.image}/>
                 <button type="submit">Save</button>
             </form>
         </div>

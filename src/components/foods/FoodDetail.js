@@ -22,6 +22,7 @@ const FoodDetail = ({ food, handleDelete }) => {
     return (
         <div className="foodItem">
             <h1>{food.name}</h1>
+            <img src={food.image}></img>
             <h3>Recipes containing {food.name}: </h3>
             {allRecipes}
             <button onClick={(onDelete)}>Delete {food.name}</button>

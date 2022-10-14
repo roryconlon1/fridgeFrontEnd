@@ -10,7 +10,7 @@ function App() {
       <Router>
         <MainContainer/>
       </Router>
-      <footer className='footer'>.</footer>
+      {/* <footer className='footer'>.</footer> */}
     </div>
   );
 }

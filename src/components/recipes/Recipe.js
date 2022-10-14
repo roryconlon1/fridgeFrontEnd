@@ -21,6 +21,7 @@ const Recipe = ({recipe}) => {
                     {recipe.name}
                 </Link>
             </h1>
+            <img src={recipe.image}></img>
         </Fragment>
     )
 
