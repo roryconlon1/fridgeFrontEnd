@@ -17,19 +17,30 @@ function App() {
 
   const Login = details => {
     console.log(details);
-  }
+
+    if(details.email == adminUser.email && details.password == adminUser.password){
+      console.log("Logged in");
+      setUser({
+        name: details.name,
+        email: details.email
+      })
+    } else {
+      console.log("Details do not match!");
+      setError("Details do not match!")
+  }}
 
   const Logout = () => {
-    console.log("Logout");
+    setUser({name: "", email: ""})
   }
 
 
 
   return (
     <div className="App">
-      {(user.email = "") ? (
+      {(user.email != "") ? (
         <Router>
           <MainContainer />
+          <button onClick={Logout}>LogOut</button>
         </Router>
       ) : (
         <LoginForm Login={Login} error={error}/>
