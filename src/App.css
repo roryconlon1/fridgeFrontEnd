@@ -88,6 +88,7 @@ color: #394a51;
 }
 
 .individualFoodItem {
+  display: flex;
   justify-content: center;
 }
 
@@ -176,12 +177,12 @@ font-size: 2em;
   outline: none;
 } */
 
-/* .App{
+.individual{
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-} */
+  flex-direction: column;
+}
 
 .form {
   width: 100%;

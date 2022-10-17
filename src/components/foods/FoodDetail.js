@@ -20,12 +20,12 @@ const FoodDetail = ({ food, handleDelete }) => {
     }
 
     return (
-        <div className="individualFoodItem">
-            <h1 className="individualFoodItem">{food.name}</h1>
-            <img src={food.image} className="individualFoodItem"></img>
-            <h3 className="individualFoodItem">Recipes containing {food.name}: </h3>
+        <div className="individual">
+            <h1 >{food.name}</h1>
+            <img src={food.image} ></img>
+            <h3 >Recipes containing {food.name}: </h3>
             {allRecipes}
-            <button onClick={(onDelete)} className="individualFoodItem">Delete {food.name}</button>
+            <button onClick={(onDelete)} >Delete {food.name}</button>
         </div>
     )
 
