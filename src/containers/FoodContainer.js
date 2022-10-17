@@ -18,7 +18,7 @@ const FoodContainer = ({recipes, handleChange, foods, onSelectedUpdate, select, 
 
     return (
         <div>
-            <FoodSearchBar handleChange={handleChange}/>
+            <FoodSearchBar handleChange={handleChange} searchResults={filterFoods}/>
             <LastestFood filterFoods={filterFoods}/>
             <Routes>
                 <Route path=":id" element={<FoodDetailWrapper />} />

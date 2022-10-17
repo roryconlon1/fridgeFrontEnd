@@ -30,6 +30,8 @@ img {
   object-fit: cover;
 }
 
+
+
 .footer {
 position: fixed;
 left: 0%;
@@ -64,8 +66,12 @@ color: #394a51;
   flex-wrap: wrap;
 } 
 
+.cardStyle {
+  background-color: #61dafb;
+}
+
 .wrap li {
-  background: #7fa99b;
+  /* background: #7fa99b; */
   margin: 4px;
   padding: 7px;
   font-size: 0.7em;
@@ -168,12 +174,12 @@ font-size: 2em;
   font-family: montserrat, sans-serif;
 }
 
-input, button{
+/* input, button{
   appearance: none;
   background: none;
   border: none;
   outline: none;
-}
+} */
 
 .App{
   /* height: 100vh; */
@@ -183,7 +189,27 @@ input, button{
   background-color: #53565a;
 }
 
-form{
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox {
+  padding: 10px;
+}
+
+.search {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.formInput {
+  margin: 1%;
+}
+
+/* form{
   display: block;
   position: relative;
 }
@@ -258,7 +284,7 @@ form .form-inner .form-group input[type="submit"] {
   background-position: 0%;
   transition: 0.4s;
   color: #FFF;
-}
+} */
 
 
 

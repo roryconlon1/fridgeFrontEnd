@@ -1,13 +1,14 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { Card, Image, Icon, Button } from "semantic-ui-react";
 
-const Food = ({food, onSelectedUpdate}) => {
+const Food = ({ food, onSelectedUpdate }) => {
 
 
-    if(!food){
-        return(
+    if (!food) {
+        return (
             <p>Loadsing...</p>
-            
+
         )
     }
 
@@ -27,21 +28,31 @@ const Food = ({food, onSelectedUpdate}) => {
     // })
 
 
-    const url = "/foods/" + food.id; 
+    const url = "/foods/" + food.id;
 
-    
 
-    return(
 
-        <Fragment>
-        <h1>
-            <Link to={url} className="name">
-                {food.name}
-            </Link>
-            </h1>
-            <img src={food.image} alt={food.name}></img>
-            <p><button onClick={handleClick}>Add {food.name} to list</button></p>
-        </Fragment>
+    return (
+
+        <Card color="brown" className="cardStyle">
+            <Image src={food.image} alt={food.name}  className="img"/>
+            <Card.Content className="cardStyle">
+                <Card.Header>
+                    <Card.Content extra>
+                        <a>
+                            <Icon name='food' />
+                            <Link to={url} className="name">
+                        {food.name}
+                    </Link>
+                        </a>
+                    </Card.Content>
+                
+                </Card.Header>
+            </Card.Content>
+            <Card.Content extra>
+            <Button onClick={handleClick} basic color="black" >Add {food.name} to list</Button>
+            </Card.Content>
+        </Card>
     )
 }
 

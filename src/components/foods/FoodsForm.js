@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 const FoodsForm = ({ onCreate }) => {
 
@@ -23,27 +24,46 @@ const FoodsForm = ({ onCreate }) => {
         onCreate(stateIngredient);
     }
 
+    const handleCancel = () => {
+        setStateIngredient({
+            name: "",
+            calories: 0,
+            foodType: "",
+            pantryFood: false,
+            fridgeFood: false,
+            image: ""
+        })
+    }
+
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Name" name="name" onChange={handleChange} value={stateIngredient.name} />
-                <input type="number" placeholder="Calories" name="calories" onChange={handleChange} value={parseInt(stateIngredient.calories)} />
-                <label for="foods">Choose a Food Type:</label>
-                <select id="foods" name="foodType" onChange={handleChange}>
+            <Form >
+            <Form.Group widths='equal'>
+                <Form.Field control='input' label="Name of food" type="text" placeholder="Name" name="name" onChange={handleChange} value={stateIngredient.name}/>
+                <Form.Field control='input' label="Number of Calories" type="number" placeholder="Calories" name="calories" onChange={handleChange} value={parseInt(stateIngredient.calories)} />
+                </Form.Group>
+                <Form.Group widths='equal'>
+               
+                <Form.Field label="Food Category" control='select' id="foods" name="foodType" onChange={handleChange} >
                     <option value="CARBOHYDRATE">Carbohydrate</option>
                     <option value="PROTEIN">Protein</option>
                     <option value="FAT">Fat</option>
                     <option value="DAIRY">Dairy</option>
                     <option value="FRUIT">Fruit</option>
                     <option value="VEGETABLE">Vegetable</option>
-                </select>
-                <input type="checkbox" id="PantryFood" placeholder="PantryFood" name="pantryFood" onChange={handleChange} value={stateIngredient.pantryFood} />
-                <label for="PantryFood">PantryFood</label>
-                <input type="checkbox" id="FridgeFood" placeholder="FridgeFood" name="fridgeFood" onChange={handleChange} value={stateIngredient.fridgeFood} />
-                <label for="FridgeFood">FridgeFood</label>
-                <input type="text" placeholder="Image" name="image" onChange={handleChange} value={stateIngredient.image}/>
-                <button type="submit">Save</button>
-            </form>
+                </Form.Field>
+                </Form.Group>
+                <Form.Group grouped className="checkbox">
+                <Checkbox toggle label="Pantry Food" control="input" type="checkbox" id="PantryFood" placeholder="PantryFood" name="pantryFood" onChange={handleChange} value={stateIngredient.pantryFood} />
+                <Checkbox toggle label="Fridge Food" control="input" type="checkbox" id="FridgeFood" placeholder="FridgeFood" name="fridgeFood" onChange={handleChange} value={stateIngredient.fridgeFood} />
+                </Form.Group>
+                <Form.Field control="input" label="Image" type="text" placeholder="Image" name="image" onChange={handleChange} value={stateIngredient.image} />
+                <Button.Group>
+                <Button onClick={handleCancel}>Cancel</Button>
+                <Button.Or/>
+                <Button positive type="submit" onClick={handleSubmit}>Save</Button>
+                </Button.Group>
+            </Form>
         </div>
     )
 }

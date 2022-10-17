@@ -1,6 +1,8 @@
 import React, {useState} from "react";
+import { Form } from "react-router-dom";
+import { Grid, Search } from 'semantic-ui-react'
 
-const FoodSearchBar = ({handleChange}) => {
+const FoodSearchBar = ({handleChange, searchResults}) => {
     const [filter, setFilter] = useState('');
 
     const handleInputChange = (event) => {
@@ -13,14 +15,25 @@ const FoodSearchBar = ({handleChange}) => {
         event.preventDefault()
     }
 
-    return(      
-        <form onSubmit={handleSubmit}>              
-        <input onChange={handleInputChange}
+    const searchResultsText = searchResults.map((food) => {
+        return {title:food.name, image:food.image}
+    })
+
+    return(    
+        <Grid className="search">
+            <Grid.Column width={4}>
+            <form onSubmit={handleSubmit}>  
+        <Search onSearchChange={handleInputChange}
+        input={{ icon: 'search', iconPosition: 'left' }}
             type="text"
             value={filter}
             placeholder="Search through Ingredients" 
+            results={searchResultsText}
         />
     </form>
+            </Grid.Column>
+        </Grid>  
+   
     )
 }
 
