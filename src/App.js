@@ -4,6 +4,7 @@ import React, { Component, useState } from 'react'
 import { BrowserRouter as Router } from 'react-router-dom';
 import MainContainer from './containers/MainContainer';
 import LoginForm from './components/login/LoginForm';
+import Footer from './Footer';
 
 function App() {
   const adminUser = {
@@ -41,6 +42,7 @@ function App() {
         <Router>
           <MainContainer />
           <button onClick={Logout}>LogOut</button>
+          <Footer/>
         </Router>
       ) : (
         <LoginForm Login={Login} error={error}/>
