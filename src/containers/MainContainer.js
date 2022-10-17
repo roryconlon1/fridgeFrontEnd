@@ -13,7 +13,7 @@ import Request from "../helpers/request";
 import FoodDetail from "../components/foods/FoodDetail";
 
 
-const MainContainer = () => {
+const MainContainer = ({logout}) => {
 
 
     // Recipe
@@ -149,7 +149,7 @@ const MainContainer = () => {
     return (
 
         <div>
-            <NavBar />
+            <NavBar logout={logout}/>
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
                 <Route path="/foods/*" element={<FoodContainer recipes={recipes} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} onCreate={handlePostFood} select={select} resetSelected={resetSelected} />} />

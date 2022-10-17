@@ -40,8 +40,7 @@ function App() {
     <div className="App">
       {(user.email != "") ? (
         <Router>
-          <MainContainer />
-          <button onClick={Logout}>LogOut</button>
+          <MainContainer logout={Logout}/>
         </Router>
       ) : (
         <LoginForm Login={Login} error={error}/>
