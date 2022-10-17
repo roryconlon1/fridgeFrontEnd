@@ -22,10 +22,10 @@
   font-size: 1.3em;
 }
 
-.components {
+/* .components {
   display: flex;
   justify-content: center;
-}
+} */
 
 img {
   width:  300px;
@@ -87,6 +87,11 @@ color: #394a51;
   justify-content: center;
 }
 
+.individualFoodItem {
+  justify-content: center;
+}
+
+
 .recipe_lists {
   display: flex;
   flex-direction: row;
@@ -131,7 +136,7 @@ font-size: 2em;
   background-color: #afc9c0;
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -140,7 +145,7 @@ font-size: 2em;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -171,12 +176,12 @@ font-size: 2em;
   outline: none;
 } */
 
-.App{
-  /* height: 100vh; */
+/* .App{
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 .form {
   width: 100%;

@@ -21,7 +21,7 @@ const FoodContainer = ({recipes, handleChange, foods, onSelectedUpdate, select, 
             <FoodSearchBar handleChange={handleChange} searchResults={filterFoods}/>
             <LastestFood filterFoods={filterFoods}/>
             <Routes>
-                <Route path=":id" element={<FoodDetailWrapper />} />
+                <Route path=":id" element={<FoodDetailWrapper className="individualFoodItem"/>} />
                 <Route path="/" element={<FoodList foods={filterFoods} onSelectedUpdate={onSelectedUpdate} select={select} recipes={recipes} resetSelected={resetSelected}/>} />
                 <Route path="/new" element={<FoodsForm foods={foods} onCreate={onCreate}/>}/>
             </Routes>
