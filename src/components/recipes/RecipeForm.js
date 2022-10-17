@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Checkbox, Form } from 'semantic-ui-react'
 
 const RecipeForm = ({onCreate}) => {
 
@@ -23,6 +24,16 @@ const RecipeForm = ({onCreate}) => {
         onCreate(stateRecipe);
     }
 
+    const handleCancel = () => {
+        setStateRecipe({
+            name: "",
+            recipeType: "",
+            cookTime: 0,
+            method: "",
+            image: ""
+        })
+    }
+
 
 
 
@@ -30,9 +41,12 @@ const RecipeForm = ({onCreate}) => {
 
     return(
         <div>
-            <form onSubmit={handleSubmit} className="form">
-                <input type="text" placeholder="Name" name="name" onChange={handleChange} value={stateRecipe.name} className="formInput"/>
-                <select id="recipe" name="recipeType" onChange={handleChange} className="formInput">
+            <Form className="form">
+                <Form.Group widths='equal'>
+                <Form.Field control="input" label="Name" type="text" placeholder="Name" name="name" onChange={handleChange} value={stateRecipe.name} className="formInput"/>
+                </Form.Group>
+                <Form.Group widths='equal'>
+                <Form.Field label="Food Category" control='select' id="recipe" name="recipeType" onChange={handleChange} className="formInput">
                     <option value="SOUP">SOUP</option>
                     <option value="PASTA">PASTA</option>
                     <option value="SALAD">SALAD</option>
@@ -40,16 +54,23 @@ const RecipeForm = ({onCreate}) => {
                     <option value="FAMILY">FAMILY</option>
                     <option value="DIET">DIET</option>
                     <option value="DESERT">DESERT</option>
-                </select>
-                <input type="number" placeholder="Cook Time" name="cookTime" onChange={handleChange} value={parseInt(stateRecipe.cookTime)} className="formInput"/>
-                <input type="text" placeholder="Method" name="method" onChange={handleChange} value={stateRecipe.method} className="formInput"/>
-                <input type="text" placeholder="Image" name="image" onChange={handleChange} value={stateRecipe.image} className="formInput"/>
-                <button type="submit" className="formInput">Save</button>
-            </form>
+                </Form.Field>
+                </Form.Group>
+            
+                <Form.Group widths='equal'>
+                <Form.Field control="input" label="Cook Time" type="number" placeholder="Cook Time" name="cookTime" onChange={handleChange} value={parseInt(stateRecipe.cookTime)} className="formInput"/>
+                <Form.Field control="input" label="Method" type="text" placeholder="Method" name="method" onChange={handleChange} value={stateRecipe.method} className="formInput"/>
+                <Form.Field control="input" label="Image" type="text" placeholder="Image" name="image" onChange={handleChange} value={stateRecipe.image} className="formInput"/>
+                </Form.Group>
+                <Button.Group>
+                <Button onClick={handleCancel}>Cancel</Button>
+                <Button.Or/>
+                <Button positive type="submit" onClick={handleSubmit}>Save</Button>
+                </Button.Group>
+            </Form>
         </div>
     )
 }
 
 
 export default RecipeForm;
-

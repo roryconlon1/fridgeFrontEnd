@@ -43,7 +43,7 @@ const FoodsForm = ({ onCreate }) => {
                 <Form.Field control='input' label="Number of Calories" type="number" placeholder="Calories" name="calories" onChange={handleChange} value={parseInt(stateIngredient.calories)} />
                 </Form.Group>
                 <Form.Group widths='equal'>
-               
+                
                 <Form.Field label="Food Category" control='select' id="foods" name="foodType" onChange={handleChange} >
                     <option value="CARBOHYDRATE">Carbohydrate</option>
                     <option value="PROTEIN">Protein</option>
