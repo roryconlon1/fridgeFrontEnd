@@ -35,16 +35,14 @@ const Food = ({ food, onSelectedUpdate }) => {
     return (
 
         <Card color="brown" className="cardStyle">
+            <Link to={url}>
             <Image src={food.image} alt={food.name}  className="img"/>
+            </Link>
             <Card.Content className="cardStyle">
                 <Card.Header>
                     <Card.Content extra>
-                        <a>
                             <Icon name='food' />
-                            <Link to={url} className="name">
-                        {food.name}
-                    </Link>
-                        </a>
+                            {food.name}
                     </Card.Content>
                 
                 </Card.Header>

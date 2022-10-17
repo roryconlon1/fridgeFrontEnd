@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
+import { Card, Icon, Image } from "semantic-ui-react";
 
 
 const Recipe = ({recipe}) => {
@@ -15,14 +16,19 @@ const Recipe = ({recipe}) => {
     const url = "/recipes/" + recipe.id;
 
     return(
-        <Fragment>
-            <h1>
-                <Link to={url} className="name">
-                    {recipe.name}
-                </Link>
-            </h1>
-            <img src={recipe.image} alt={recipe.name}></img>
-        </Fragment>
+        <Card color="brown" className="cardStyle">
+            <Link to={url}>
+            <Image src={recipe.image} alt={recipe.name} className="img"/>
+            </Link>
+            <Card.Content className="cardStyle">
+                <Card.Header>
+                    <Card.Content extra>
+                            <Icon name="food"/>
+                            {recipe.name}
+                    </Card.Content>
+                </Card.Header>
+            </Card.Content>
+        </Card>
     )
 
 }
