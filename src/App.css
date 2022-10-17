@@ -1,9 +1,8 @@
 .App {
-  text-align: center;
   list-style: none;
   margin: 0;
   padding: 0%;
-  background-color: #394a51;
+  background-color: white;
 }
 
 .App-logo {
@@ -18,10 +17,14 @@
 }
 
 .components {
-  background-color: #394a51;
   margin: 4px;
   padding: 20px;
   font-size: 1.3em;
+}
+
+.components {
+  display: flex;
+  justify-content: center;
 }
 
 img {
@@ -58,7 +61,8 @@ color: #394a51;
   list-style: none;
   display: flex;
   flex-direction: row;
-  background-color: #394a51;
+  /* background-color: #394a51; */
+  justify-content: space-evenly;
 }
 
 .wrap    { 
@@ -79,18 +83,8 @@ color: #394a51;
 }
 
 .foodItem {
-  /* padding: 5px;
-  width: 100px;
-  height: 100px; */
-  /* margin: 10px; */
-  border-radius: 10%;
-
-  
-  /* line-height: 100px;
-  color: white;
-  font-weight: bold;
-  font-size: 2em;
-  text-align: center; */
+  display: flex;
+  justify-content: center;
 }
 
 .recipe_lists {
@@ -113,17 +107,13 @@ color: #394a51;
   width: 24%;
 }
 
-.navBar {
-  list-style-type: none;
-margin: 0;
-padding: 0px;
-overflow: hidden;
-display: flex;
-justify-content: center;
-background-color: #7fa99b;
-font-size: 1.5em;
-
+.navbar {
+font-size: 1.8em;
 }
+
+.logout {
+  font-size: 1.5em;
+  }
 
 .nav_id {
   float: left;
@@ -186,7 +176,6 @@ font-size: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #53565a;
 }
 
 .form {
