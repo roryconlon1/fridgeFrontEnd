@@ -2,6 +2,7 @@ import React from "react";
 import Select from "react-select/lib/Select";
 import Food from "./Food";
 import SelectedFood from "./SelectedFood";
+import { Link } from "react-router-dom";
 
 const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected}) => {
 
@@ -27,7 +28,7 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected}) => 
 
     return(
         <div>
-        <a className="new_recipe_food" href={url}>Add a new Ingredient</a>
+        <Link className="new_recipe_food" to={url}>Add a new Ingredient</Link>
         <ul className="components-list wrap">
             {foodElements}
         </ul>

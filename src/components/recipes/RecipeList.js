@@ -22,7 +22,7 @@ const RecipeList = ({recipes}) => {
 
     return(
         <div>
-        <a className="new_recipe_food" href={url}>Add a new Recipe</a>
+        <Link className="new_recipe_food" to={url}>Add a new Recipe</Link>
         <ul className="components-list wrap">
             {recipeElements}
         </ul>
