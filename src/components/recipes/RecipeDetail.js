@@ -56,7 +56,7 @@ const RecipeDetail = ({recipe, foods}) => {
 
 
     return(
-        <div className="foodItem">
+        <div className="individual">
             <h1>{recipe.name}</h1>
             {/* <h2>{recipe.cookTime}</h2> */}
             <h2>Total Calories: </h2>
