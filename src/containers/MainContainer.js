@@ -11,15 +11,19 @@ import { useParams } from "react-router-dom";
 import RecipeDetail from "../components/recipes/RecipeDetail";
 import Request from "../helpers/request";
 import FoodDetail from "../components/foods/FoodDetail";
+import { useNavigate } from "react-router-dom";
+
 
 
 const MainContainer = ({logout}) => {
 
 
     // Recipe
+    const navigate = useNavigate();
     const [recipes, setRecipes] = useState([]);
     const [filter, setFilter] = useState("");
     const [filterRecipe, setfilterRecipe] = useState([]);
+
 
     //Food
     const [foods, setFoods] = useState([])
@@ -27,24 +31,33 @@ const MainContainer = ({logout}) => {
     const [select, setSelected] = useState([])
 
 
-    //Recipes
-    useEffect(() => {
+    const getRecipe = () => { 
         const request = new Request()
         request.get("/api/recipes")
             .then((data) => {
                 setRecipes(data)
                 setfilterRecipe(data);
             })
+    }
+
+    //Recipes
+    useEffect(() => {
+        getRecipe()
     }, [])
 
-    //Food
-    useEffect(() => {
+
+    const getFood = () => { 
         const request = new Request()
         request.get("/api/foods")
             .then((data) => {
                 setFoods(data);
                 setfilterFoods(data);
             })
+    }
+
+    //Food
+    useEffect(() => {
+        getFood()
     }, [])
 
     //Recipes
@@ -110,14 +123,14 @@ const MainContainer = ({logout}) => {
     const RecipeDetailWrapper = () => {
         const { id } = useParams();
         let foundRecipe = findRecipeById(id)
-        return <RecipeDetail recipe={foundRecipe} foods={foods} />
+        return <RecipeDetail recipe={foundRecipe} foods={foods} onStateChange={getRecipe} />
     }
 
     //Food
     const FoodDetailWrapper = () => {
         const { id } = useParams();
         let foundFood = findFoodById(id)
-        return <FoodDetail food={foundFood} handleDelete={handleDelete} />
+        return <FoodDetail food={foundFood} handleDelete={handleDelete} onStateChange={getFood} />
     }
 
     //Food
@@ -136,7 +149,8 @@ const MainContainer = ({logout}) => {
         const url = "/api/foods/" + id;
         request.delete(url)
             .then(() => {
-                window.location = "/foods"
+                getFood()
+                navigate("/foods")
             })
     }
 

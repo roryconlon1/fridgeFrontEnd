@@ -57,16 +57,18 @@ const HomeContainer = () => {
                     </div>
                 </div>
 
+
+
                 {/* <div id="secondary-content">
                     <div class="wrapper">
-                        <article style="background-image: url('images/article-image-1.jpg');">
+                        <article style="background-image: url('../images/welcome.png');">
                             <div class="overlay">
                                 <h4>Secondary Content</h4>
                                 <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt nam.</small></p>
                                 <a href="#" class="more-link">View more</a>
                             </div>
                         </article>
-                        <article style="background-image: url('images/article-image-2.jpg');">
+                        <article style="background-image: url('../images/welcome.png');">
                             <div class="overlay">
                                 <h4>Secondary Content</h4>
                                 <p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt nam.</small></p>
@@ -75,6 +77,9 @@ const HomeContainer = () => {
                         </article><div class="clear"></div>
                     </div>
                 </div> */}
+
+
+
 
                 <div id="cta">
                 </div>
