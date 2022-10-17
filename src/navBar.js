@@ -14,9 +14,11 @@ const NavBar = ({logout}) => (
         <Menu.Item name="Ingredients">
             <Link to="/recipes">Recipes</Link>
         </Menu.Item>
+        <Menu.Menu position="right">
         <Menu.Item name="Logout" onClick={logout}>
 
         </Menu.Item>
+        </Menu.Menu>
     </Menu>
 )
 
