@@ -3,6 +3,7 @@ import Welcome from '../images/welcome.png';
 import Placeholder from '../images/video-placeholder.jpeg'
 import './HomeCon.css';
 import { Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 import RedFig from '../images/RedFig1.png'
 import RedFig2 from '../images/RedFig2.png'
@@ -134,7 +135,7 @@ const HomeContainer = () => {
                     <div class="wrapper">
                         <h3>Heard Enough?</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt. Nam ultricies odio ac neque suscipit volutpat. Ut dictum adipiscing felis sed malesuada. Integer porta sem nec nibh hendrerit imperdiet. </p>
-                        <a href="#" class="button-2">Get Started</a>
+                        <Link to="/foods" class="button-2">Get Started</Link>
                     </div>
                 </div>
 

@@ -44,7 +44,8 @@ const FoodsForm = ({ onCreate }) => {
                 </Form.Group>
                 <Form.Group widths='equal'>
                 
-                <Form.Field label="Food Category" control='select' id="foods" name="foodType" onChange={handleChange} >
+                <Form.Field label="Food Category" defaultValue={"default"} control='select' id="foods" name="foodType" onChange={handleChange} >
+                    <option value={"default"} disabled>Choose a Category</option>
                     <option value="CARBOHYDRATE">Carbohydrate</option>
                     <option value="PROTEIN">Protein</option>
                     <option value="FAT">Fat</option>
