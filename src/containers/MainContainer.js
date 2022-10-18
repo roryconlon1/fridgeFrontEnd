@@ -81,7 +81,7 @@ const MainContainer = ({logout}) => {
         const request = new Request();
         request.post('/api/recipes', recipe)
             .then(() => {
-                window.location = '/recipes'
+                navigate('/recipes')
             })
     }
 
@@ -90,7 +90,8 @@ const MainContainer = ({logout}) => {
         const request = new Request();
         request.post('/api/foods', food)
             .then(() => {
-                window.location = '/foods'
+                getFood()
+                navigate('/foods')
             })
     }
 
@@ -123,7 +124,7 @@ const MainContainer = ({logout}) => {
     const RecipeDetailWrapper = () => {
         const { id } = useParams();
         let foundRecipe = findRecipeById(id)
-        return <RecipeDetail recipe={foundRecipe} foods={foods} onStateChange={getRecipe} />
+        return <RecipeDetail recipe={foundRecipe} foods={foods} onStateChange={getRecipe} getRecipe={getRecipe}/>
     }
 
     //Food

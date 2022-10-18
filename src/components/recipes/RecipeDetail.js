@@ -4,7 +4,7 @@ import Request from "../../helpers/request";
 import Food from "../foods/Food";
 import { useNavigate } from "react-router-dom";
 
-const RecipeDetail = ({recipe, foods, onStateChange}) => {
+const RecipeDetail = ({recipe, foods, onStateChange, getRecipe}) => {
 
     const navigate = useNavigate();
 
@@ -32,7 +32,9 @@ const RecipeDetail = ({recipe, foods, onStateChange}) => {
         const request = new Request();
         request.put(`/api/recipes/${recipe.id}/addIngredient/${foodId}`)
         .then (() => {
-            window.location = `/recipes/${recipe.id}`
+            getRecipe()
+            navigate(`/recipes/${recipe.id}`)
+            
         })
     }
 
