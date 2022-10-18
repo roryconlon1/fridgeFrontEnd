@@ -41,6 +41,35 @@ function App() {
       {(user.email != "") ? (
         <Router>
           <MainContainer logout={Logout}/>
+          <footer>
+                    <div class="wrapper">
+                        <div id="footer-info">
+                            <p>Copyright 2020 RedFig. All rights reserved by two idiots.</p>
+                            <p><a href="#">Terms of Service</a> I <a href="#">Privacy</a></p>
+                        </div>
+                        <div id="footer-links">
+                            <ul>
+                                <li><h5>RedFig</h5></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">GoodFood</a></li>
+                                <li><a href="#">A Food Blog</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                            <ul>
+                                <li><h5>Company</h5></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Meet The Team</a></li>
+                                <li><a href="#">What We Do</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                            <ul>
+                                <li><h5>Our Partners</h5></li>
+                                <li><a href="#">About Them</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </footer>
         </Router>
       ) : (
         <LoginForm Login={Login} error={error}/>
