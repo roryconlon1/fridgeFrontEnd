@@ -321,5 +321,10 @@ form .form-inner .form-group input[type="submit"] {
   font-family: cursive;
 }
 
+a.nav.item:hover {
+  background: #1B1C1D;
+  color: #17AA1C;
+}
+
 
 
