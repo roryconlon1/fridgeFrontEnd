@@ -16,8 +16,10 @@ const FoodSearchBar = ({handleChange, searchResults}) => {
     }
 
     const searchResultsText = searchResults.map((food) => {
-        return {title:food.name, image:food.image}
+        const nameOfFood = food.name.replace(/ *\([^)]*\) */g, "");
+        return {title:nameOfFood, image:food.image}
     })
+
 
     return(    
         <Grid className="search">
