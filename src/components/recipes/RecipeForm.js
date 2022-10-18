@@ -43,7 +43,7 @@ const RecipeForm = ({onCreate}) => {
         <div>
             <Form className="form">
                 <Form.Group widths='equal'>
-                <Form.Field control="input" label="Name" type="text" placeholder="Name" name="name" onChange={handleChange} value={stateRecipe.name} className="formInput"/>
+                <Form.Field control="input" label="Name" type="text" maxLength="250" placeholder="Name" name="name" onChange={handleChange} value={stateRecipe.name} className="formInput"/>
                 </Form.Group>
                 <Form.Group widths='equal'>
                 <Form.Field label="Food Category" control='select' id="recipe" name="recipeType" onChange={handleChange} className="formInput">
@@ -58,9 +58,9 @@ const RecipeForm = ({onCreate}) => {
                 </Form.Group>
             
                 <Form.Group widths='equal'>
-                <Form.Field control="input" label="Cook Time" type="number" placeholder="Cook Time" name="cookTime" onChange={handleChange} value={parseInt(stateRecipe.cookTime)} className="formInput"/>
-                <Form.Field control="input" label="Method" type="text" placeholder="Method" name="method" onChange={handleChange} value={stateRecipe.method} className="formInput"/>
-                <Form.Field control="input" label="Image" type="text" placeholder="Image" name="image" onChange={handleChange} value={stateRecipe.image} className="formInput"/>
+                <Form.Field control="input" label="Cook Time" type="number"  placeholder="Cook Time" name="cookTime" onChange={handleChange} value={parseInt(stateRecipe.cookTime)} className="formInput"/>
+                <Form.Field control="input" label="Method" type="text" placeholder="Method" maxLength="250" name="method" onChange={handleChange} value={stateRecipe.method} className="formInput"/>
+                <Form.Field control="input" label="Image" type="text" placeholder="Image" maxLength="250" name="image" onChange={handleChange} value={stateRecipe.image} className="formInput"/>
                 </Form.Group>
                 <Button.Group>
                 <Button onClick={handleCancel}>Cancel</Button>

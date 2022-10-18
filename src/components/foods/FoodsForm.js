@@ -39,8 +39,8 @@ const FoodsForm = ({ onCreate }) => {
         <div>
             <Form >
             <Form.Group widths='equal'>
-                <Form.Field control='input' label="Name of food" type="text" placeholder="Name" name="name" onChange={handleChange} value={stateIngredient.name}/>
-                <Form.Field control='input' label="Number of Calories" type="number" placeholder="Calories" name="calories" onChange={handleChange} value={parseInt(stateIngredient.calories)} />
+                <Form.Field control='input' label="Name of food" type="text" maxLength="250" placeholder="Name" name="name" onChange={handleChange} value={stateIngredient.name}/>
+                <Form.Field control='input' label="Number of Calories" type="number" maxLength="250" placeholder="Calories" name="calories" onChange={handleChange} value={parseInt(stateIngredient.calories)} />
                 </Form.Group>
                 <Form.Group widths='equal'>
                 
@@ -57,7 +57,7 @@ const FoodsForm = ({ onCreate }) => {
                 <Checkbox toggle label="Pantry Food" control="input" type="checkbox" id="PantryFood" placeholder="PantryFood" name="pantryFood" onChange={handleChange} value={stateIngredient.pantryFood} />
                 <Checkbox toggle label="Fridge Food" control="input" type="checkbox" id="FridgeFood" placeholder="FridgeFood" name="fridgeFood" onChange={handleChange} value={stateIngredient.fridgeFood} />
                 </Form.Group>
-                <Form.Field control="input" label="Image" type="text" placeholder="Image" name="image" onChange={handleChange} value={stateIngredient.image} />
+                <Form.Field control="input" label="Image" type="text" maxLength="250" placeholder="Image" name="image" onChange={handleChange} value={stateIngredient.image} />
                 <Button.Group>
                 <Button onClick={handleCancel}>Cancel</Button>
                 <Button.Or/>
