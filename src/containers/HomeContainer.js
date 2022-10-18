@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Welcome from '../images/welcome.png';
 import Placeholder from '../images/video-placeholder.jpeg'
 import './HomeCon.css';
+import { Button } from "semantic-ui-react";
+
 import RedFig from '../images/RedFig1.png'
 import RedFig2 from '../images/RedFig2.png'
 import RedFig3 from '../images/RedFig7.png'
@@ -10,11 +12,44 @@ import RedFig5 from '../images/RedFig5.png'
 import RedFig6 from '../images/RedFig8.png'
 
 
+
 const HomeContainer = () => {
+
+    const [logo, setLogo] = useState(["R", "e", "D", "F", "i", "G"]);
+
+    const elementsOfLogo = logo.map((letter) => {
+        return letter
+    })
+
+    const handleClick = () => {
+        logo.includes("e") ? setLogo(["F", "R", "I", "D", "G", "E"]) : setLogo(["R", "e", "D", "F", "i", "G"]);
+    }
 
     return (
         <div>
             <body>
+
+                {/* <header>
+                    <div class="wrapper">
+                        <h1>Simply<span class="color">.</span></h1>
+                        <nav>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Portfolio</a></li>
+                                <li><a href="#">Contact</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header> */}
+                {/* add multiple elements to array for amount of each ingredient needed */}
+                  <div className="appName">
+                    {elementsOfLogo}
+                    <Button onClick={handleClick} circular icon="sort" />
+                </div>
+                <div>
+      </div>
+
                 <body>
 
                     <center>
@@ -53,11 +88,16 @@ const HomeContainer = () => {
 
                 </body> */}
 
+
                 {/* <div id="welcome.png">
                     <img src={Welcome} alt="Welcome" />
                     <h2>IMAGE PLACEHOLDER</h2>
                     <a>IMAGE PLACEHOLDER</a>
+
+                </div>
+
                 </div> */}
+
 
                 <div id="features">
                     <div class="wrapper">
