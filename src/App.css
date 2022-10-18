@@ -180,7 +180,13 @@ font-size: 2em;
   display: flex;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
 }
+/* 
+.method{
+  padding-left: 500px;
+  padding-right: 500px;
+} */
 
 .form {
   width: 100%;
@@ -284,6 +290,35 @@ form .form-inner .form-group input[type="submit"] {
   display: flex;
   justify-content: flex-end;
   padding-right: 18px;
+}
+
+.mainContainer {
+  border-bottom: 40px;
+}
+
+.recipeImage{
+  width:  600px;
+  height: 680px;
+  object-fit: cover;
+}
+
+.individualRecipe{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  padding-top: 20px;
+}
+
+.recipeName {
+  text-align: center;
+}
+
+.recipeNameSize{
+  font-size: 2.3em;
+  font-family: cursive;
 }
 
 

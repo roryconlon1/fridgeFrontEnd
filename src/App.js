@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       {(user.email != "") ? (
         <Router>
-          <MainContainer logout={Logout}/>
+          <MainContainer logout={Logout} className="mainContainer"/>
           <footer>
                     <div class="wrapper">
                         <div id="footer-info">

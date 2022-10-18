@@ -44,12 +44,8 @@ const HomeContainer = () => {
                     </div>
                 </header> */}
                 {/* add multiple elements to array for amount of each ingredient needed */}
-                  <div className="appName">
-                    {elementsOfLogo}
-                    <Button onClick={handleClick} circular icon="sort" />
-                </div>
                 <div>
-      </div>
+                </div>
 
                 <body>
 
@@ -62,9 +58,11 @@ const HomeContainer = () => {
                             <img src={RedFig5}
                                 alt="GeeksforGeeks logo" />
                         </marquee>
-                        <p id="text">
-                            Red Fig! Your Personal Fridge!
-                        </p>
+                        <div className="appName">
+                            {elementsOfLogo}
+                            <Button onClick={handleClick} circular icon="sort" />
+                        </div>
+
                         <marquee behavior="alternate" direction="right">
                             <img src={RedFig2}
                                 alt="GeeksforGeeks logo" />

@@ -71,14 +71,14 @@ const RecipeDetail = ({recipe, foods, getRecipe}) => {
 
 
     return(
-        <div className="individual">
-            <h1>{recipe.name}</h1>
-            {/* <h2>{recipe.cookTime}</h2> */}
+        <div className="recipeName">
+            <h1 className="recipeNameSize">{recipe.name}</h1>
+        <div className="individualRecipe">
             <h2>Total Calories: </h2>
             <h2>{allCalories}</h2>
-            <h3>{recipe.method}</h3>
-            <h3>{recipe.recipeType}</h3>
-            <img src={recipe.image}></img>
+            <h2>Cooking Time: </h2>
+            <h2>{recipe.cookTime} minutes</h2>
+            <img src={recipe.image} className="recipeImage"></img>
             <h2>Ingredients :</h2>
             <h3><i>{ingredientElements}</i></h3>
             <button onClick={(onDelete)}>Delete Recipe</button>
@@ -91,9 +91,14 @@ const RecipeDetail = ({recipe, foods, getRecipe}) => {
                 </select>
                 <button type="submit">Add Ingredient</button>
             </form>
-            
+        </div>
+        <div className="recipeName">
+        <h2>How to make {recipe.name}</h2>
+        <h3 className="method">{recipe.method}</h3>
+        </div>
         </div>
     )
 }
+
 
 export default RecipeDetail;
