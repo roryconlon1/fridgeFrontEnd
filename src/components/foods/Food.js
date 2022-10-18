@@ -30,25 +30,25 @@ const Food = ({ food, onSelectedUpdate }) => {
 
     const url = "/foods/" + food.id;
 
-
+    const nameOfFood = food.name.replace(/ *\([^)]*\) */g, "");
 
     return (
 
         <Card color="brown" className="cardStyle">
             <Link to={url}>
-            <Image src={food.image} alt={food.name}  className="img"/>
+            <Image src={food.image} alt={nameOfFood}  className="img"/>
             </Link>
             <Card.Content className="cardStyle">
                 <Card.Header>
                     <Card.Content extra>
                             <Icon name='food' />
-                            {food.name}
+                            {nameOfFood}
                     </Card.Content>
                 
                 </Card.Header>
             </Card.Content>
             <Card.Content extra>
-            <Button onClick={handleClick} basic color="black" >Add {food.name} to list</Button>
+            <Button onClick={handleClick} basic color="black" >Add {nameOfFood} to list</Button>
             </Card.Content>
         </Card>
     )

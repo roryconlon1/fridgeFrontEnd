@@ -19,13 +19,15 @@ const FoodDetail = ({ food, handleDelete }) => {
         handleDelete(food.id)
     }
 
+    const nameOfFood = food.name.replace(/ *\([^)]*\) */g, "");
+
     return (
         <div className="individual">
-            <h1 >{food.name}</h1>
+            <h1 >{nameOfFood}</h1>
             <img src={food.image} ></img>
-            <h3 >Recipes containing {food.name}: </h3>
+            <h3 >Recipes containing {nameOfFood}: </h3>
             {allRecipes}
-            <button onClick={(onDelete)} >Delete {food.name}</button>
+            <button onClick={(onDelete)} >Delete {nameOfFood}</button>
         </div>
     )
 

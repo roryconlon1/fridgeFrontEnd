@@ -323,3 +323,15 @@ form .form-inner .form-group input[type="submit"] {
 
 
 
+a.nav.item:hover {
+  background: #1B1C1D;
+  color: #17AA1C;
+  font-size: 1em;
+}
+
+.link {
+  font-size: 2em;
+}
+
+
+

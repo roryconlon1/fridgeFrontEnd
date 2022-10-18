@@ -24,7 +24,7 @@ const RecipeDetail = ({recipe, foods, getRecipe}) => {
             }
         });
         const ingredientElements = Object.entries(ingredientQuantity).map(([key, value])=>{
-            return  <li>{key} x {value}</li>
+            return  <li>{value} x {key}</li>
         })
 
     const handleDelete = (id) => {
@@ -58,7 +58,8 @@ const RecipeDetail = ({recipe, foods, getRecipe}) => {
     }
 
     const allIngredients = foods.map((food, index) => {
-        return <option key={index} value={food.id}>{food.name}</option>
+        const nameOfFood = food.name.replace(/ *\([^)]*\) */g, "");
+        return <option key={index} value={food.id}>{nameOfFood}</option>
     })
 
     const allCalories = recipe.foods.reduce((runningTotal, food) => {
