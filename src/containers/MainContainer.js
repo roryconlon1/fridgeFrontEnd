@@ -84,7 +84,7 @@ const MainContainer = ({logout}) => {
                 navigate('/recipes')
             })
     }
-
+    
     //Food
     const handlePostFood = (food) => {
         const request = new Request();
