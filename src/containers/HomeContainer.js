@@ -11,6 +11,7 @@ import RedFig3 from '../images/RedFig7.png'
 import RedFig4 from '../images/RedFig4.png'
 import RedFig5 from '../images/RedFig5.png'
 import RedFig6 from '../images/RedFig8.png'
+import Rory from '../images/Rory.jpg'
 
 
 
@@ -53,7 +54,7 @@ const HomeContainer = () => {
                         <marquee behavior="alternate" direction="left" truespeed="12">
                             <img src={RedFig}
                                 alt="GeeksforGeeks logo" />
-                            <img src={RedFig4}
+                            <img src={Rory}
                                 alt="GeeksforGeeks logo" />
                             <img src={RedFig5}
                                 alt="GeeksforGeeks logo" />
@@ -63,7 +64,7 @@ const HomeContainer = () => {
                             <Button onClick={handleClick} circular icon="sort" />
                         </div>
 
-                        <marquee behavior="alternate" direction="right">
+                        <marquee behavior="alternate" direction="right" truespeed="12">
                             <img src={RedFig2}
                                 alt="GeeksforGeeks logo" />
                             <img src={RedFig3}
