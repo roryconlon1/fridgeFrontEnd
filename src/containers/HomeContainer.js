@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Welcome from '../images/welcome.png';
 import Placeholder from '../images/video-placeholder.jpeg'
 import './HomeCon.css';
+import { Button } from "semantic-ui-react";
 
 const HomeContainer = () => {
+
+    const [logo, setLogo] = useState(["R", "e", "D", "F", "i", "G"]);
+
+    const elementsOfLogo = logo.map((letter) => {
+        return letter
+    })
+
+    const handleClick = () => {
+        logo.includes("e") ? setLogo(["F", "R", "I", "D", "G", "E"]) : setLogo(["R", "e", "D", "F", "i", "G"]);
+    }
 
     return (
         <div>
@@ -21,13 +32,19 @@ const HomeContainer = () => {
                         </nav>
                     </div>
                 </header> */}
+                {/* add multiple elements to array for amount of each ingredient needed */}
+                  <div className="appName">
+                    {elementsOfLogo}
+                    <Button onClick={handleClick} circular icon="sort" />
+                </div>
+                <div>
+      </div>
 
                 <div id="welcome.png">
                     <img src={Welcome} alt="Welcome" />
                     <h2>IMAGE PLACEHOLDER</h2>
                     <a>IMAGE PLACEHOLDER</a>
                 </div>
-
                 <div id="features">
                     <div class="wrapper">
                         <ul>

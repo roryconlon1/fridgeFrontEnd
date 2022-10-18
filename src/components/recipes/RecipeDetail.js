@@ -2,20 +2,23 @@ import React, { useState } from "react";
 import Recipe from "./Recipe";
 import Request from "../../helpers/request";
 import Food from "../foods/Food";
-import { useNavigate } from "react-router-dom";
 
-const RecipeDetail = ({recipe, foods, onStateChange}) => {
-
-    const navigate = useNavigate();
+const RecipeDetail = ({recipe, foods}) => {
 
     if(!recipe){
         return <p>Loading . . .</p>
     }
 
     const allFoods = recipe.foods.map((food, index) => {
-        return <div key={index}>
-            {food.name}
-        </div>
+        const individual = []
+        const alreadyExists = individual.some(value => value.id == food.id)
+        if(!alreadyExists){
+            individual.push(food)
+            return individual.map((ingredient) => {
+                return  ingredient.name
+            })
+        }
+
     })
 
     const handleDelete = (id) => {
@@ -23,8 +26,7 @@ const RecipeDetail = ({recipe, foods, onStateChange}) => {
         const url = "/api/recipes/" + id;
         request.delete(url)
         .then(() => {
-            onStateChange()
-            navigate("/recipes")
+            window.location = "/recipes"
         })
     }
 

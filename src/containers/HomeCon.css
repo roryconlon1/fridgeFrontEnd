@@ -246,3 +246,14 @@ footer {
     margin: 10px 0;
 }
 
+.appName {
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 2em;
+}
+
+
+
+
