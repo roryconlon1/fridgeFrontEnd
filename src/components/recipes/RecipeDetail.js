@@ -9,17 +9,19 @@ const RecipeDetail = ({recipe, foods}) => {
         return <p>Loading . . .</p>
     }
 
-    const allFoods = recipe.foods.map((food, index) => {
-        const individual = []
-        const alreadyExists = individual.some(value => value.id == food.id)
-        if(!alreadyExists){
-            individual.push(food)
-            return individual.map((ingredient) => {
-                return  ingredient.name
-            })
-        }
 
-    })
+    const ingredientQuantity = {}
+    recipe.foods.forEach((food, index) => {
+            if(food.name in ingredientQuantity){
+                ingredientQuantity[food.name] += 1
+            }
+            else {
+                ingredientQuantity[food.name] = 1
+            }
+        });
+        const ingredientElements = Object.entries(ingredientQuantity).map(([key, value])=>{
+            return  <li>{key} x {value}</li>
+        })
 
     const handleDelete = (id) => {
         const request = new Request();
@@ -71,7 +73,7 @@ const RecipeDetail = ({recipe, foods}) => {
             <h3>{recipe.recipeType}</h3>
             <img src={recipe.image}></img>
             <h2>Ingredients :</h2>
-            <h3><i>{allFoods}</i></h3>
+            <h3><i>{ingredientElements}</i></h3>
             <button onClick={(onDelete)}>Delete Recipe</button>
             <form onSubmit={onPost}>
                 <select name="food"  defaultValue="select-food">
