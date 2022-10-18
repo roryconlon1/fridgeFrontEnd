@@ -81,6 +81,7 @@ const MainContainer = ({logout}) => {
         const request = new Request();
         request.post('/api/recipes', recipe)
             .then(() => {
+                getRecipe()
                 navigate('/recipes')
             })
     }

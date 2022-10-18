@@ -5,7 +5,7 @@ import Food from "../foods/Food";
 import { useNavigate } from "react-router-dom";
 
 
-const RecipeDetail = ({recipe, foods, onStateChange, getRecipe}) => {
+const RecipeDetail = ({recipe, foods, getRecipe}) => {
 
     const navigate = useNavigate()
 
@@ -32,6 +32,7 @@ const RecipeDetail = ({recipe, foods, onStateChange, getRecipe}) => {
         const url = "/api/recipes/" + id;
         request.delete(url)
         .then(() => {
+            getRecipe()
             navigate("/recipes")
         })
     }
