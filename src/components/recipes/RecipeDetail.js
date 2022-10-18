@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Recipe from "./Recipe";
 import Request from "../../helpers/request";
 import Food from "../foods/Food";
+import { useNavigate } from "react-router-dom";
+
 
 const RecipeDetail = ({recipe, foods, onStateChange, getRecipe}) => {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     if(!recipe){
         return <p>Loading . . .</p>
@@ -30,7 +32,7 @@ const RecipeDetail = ({recipe, foods, onStateChange, getRecipe}) => {
         const url = "/api/recipes/" + id;
         request.delete(url)
         .then(() => {
-            window.location = "/recipes"
+            navigate("/recipes")
         })
     }
 
