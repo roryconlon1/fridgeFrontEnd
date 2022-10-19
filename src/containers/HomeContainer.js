@@ -142,7 +142,7 @@ const HomeContainer = ({recipes}) => {
                         <Link to="/foods" class="button-2">Get Started</Link>
                     </div>
                 </div>
-                {allRecipeImages}
+                {/* {allRecipeImages} */}
 
 
                 {/* <footer>
