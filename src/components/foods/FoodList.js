@@ -4,7 +4,7 @@ import Food from "./Food";
 import SelectedFood from "./SelectedFood";
 import { Link } from "react-router-dom";
 
-const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected}) => {
+const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected, user}) => {
 
     if(foods.length === 0){
         return(
@@ -22,6 +22,10 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected}) => 
         )
     })
 
+    const userElements = user.map((u, index) => {
+        return <h2>{u.id}</h2>
+    })
+
 
     const url = "/foods/new"
 
@@ -35,6 +39,7 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected}) => 
         <li>
             {select ? <SelectedFood select={select} recipes={recipes} resetSelected={resetSelected}/> : null}
         </li>
+        {userElements}
         </div>
     )
 

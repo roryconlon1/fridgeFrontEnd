@@ -11,7 +11,7 @@ import SelectedFood from "../components/foods/SelectedFood";
 import FoodDetail from "../components/foods/FoodDetail";
 import FoodSearchBar from "../components/foods/FoodSearchBar";
 
-const FoodContainer = ({recipes, handleChange, foods, onSelectedUpdate, select, filterFoods, FoodDetailWrapper, onCreate, resetSelected}) => {
+const FoodContainer = ({recipes, handleChange, foods, onSelectedUpdate, select, filterFoods, FoodDetailWrapper, onCreate, resetSelected, user}) => {
 
 
 
@@ -22,7 +22,7 @@ const FoodContainer = ({recipes, handleChange, foods, onSelectedUpdate, select, 
             <LastestFood filterFoods={filterFoods}/>
             <Routes>
                 <Route path=":id" element={<FoodDetailWrapper className="individualFoodItem"/>} />
-                <Route path="/" element={<FoodList foods={filterFoods} onSelectedUpdate={onSelectedUpdate} select={select} recipes={recipes} resetSelected={resetSelected}/>} />
+                <Route path="/" element={<FoodList foods={filterFoods} onSelectedUpdate={onSelectedUpdate} select={select} recipes={recipes} resetSelected={resetSelected} user={user}/>} />
                 <Route path="/new" element={<FoodsForm foods={foods} onCreate={onCreate}/>}/>
             </Routes>
         </div>

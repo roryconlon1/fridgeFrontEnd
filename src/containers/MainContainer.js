@@ -30,6 +30,9 @@ const MainContainer = ({logout}) => {
     const [filterFoods, setfilterFoods] = useState([])
     const [select, setSelected] = useState([])
 
+    //User
+    const [user, setUser] = useState([])
+
 
     const getRecipe = () => { 
         const request = new Request()
@@ -161,6 +164,19 @@ const MainContainer = ({logout}) => {
         setSelected([])
     }
 
+    //User
+    const getUser = () => { 
+        const request = new Request()
+        request.get("/api/users")
+            .then((data) => {
+                setUser(data)
+            })
+    }
+
+    useEffect(() => {
+        getUser()
+    }, [])
+
 
     return (
 
@@ -168,7 +184,7 @@ const MainContainer = ({logout}) => {
             <NavBar logout={logout}/>
             <Routes>
                 <Route path="/" element={<HomeContainer />} />
-                <Route path="/foods/*" element={<FoodContainer recipes={recipes} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} onCreate={handlePostFood} select={select} resetSelected={resetSelected} />} />
+                <Route path="/foods/*" element={<FoodContainer recipes={recipes} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} onCreate={handlePostFood} select={select} resetSelected={resetSelected} user={user} />} />
                 <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} foods={foods} onCreate={handlePost} />} />
             </Routes>
         </div>
