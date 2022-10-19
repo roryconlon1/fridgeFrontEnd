@@ -76,14 +76,14 @@ const RecipeDetail = ({recipe, foods, getRecipe}) => {
             <h1 className="recipeNameSize">{recipe.name}</h1>
         <div className="individualRecipe">
             <div className="lhsRecipe">
-            <h2>Total Calories: </h2>
-            <h2>{allCalories}</h2>
-            <h2>Cooking Time: </h2>
-            <h2>{recipe.cookTime} minutes</h2>
+            <h2 className="methodName">Total Calories: </h2>
+            <h2 className="method">{allCalories}</h2>
+            <h2 className="methodName">Cooking Time: </h2>
+            <h2 className="method">{recipe.cookTime} minutes</h2>
             </div>
             <img src={recipe.image} className="recipeImage"></img>
-            <h2>Ingredients :</h2>
-            <h3><i>{ingredientElements}</i></h3>
+            <h2 className="methodName">Ingredients :</h2>
+            <h3 className="method"><i>{ingredientElements}</i></h3>
             <button onClick={(onDelete)}>Delete Recipe</button>
             <form onSubmit={onPost}>
                 <select name="food"  defaultValue="select-food">
@@ -96,8 +96,10 @@ const RecipeDetail = ({recipe, foods, getRecipe}) => {
             </form>
         </div>
         <div className="recipeName">
-        <h2>How to make {recipe.name}</h2>
-        <h3 className="method">{recipe.method}</h3>
+        <h2 className="methodName">How to make {recipe.name}:</h2>
+        <h2 className="method">1. {recipe.method1}</h2>
+        <h2 className="method">2. {recipe.method2}</h2>
+        <h2 className="method">3. {recipe.method3}</h2>
         </div>
         </div>
     )
