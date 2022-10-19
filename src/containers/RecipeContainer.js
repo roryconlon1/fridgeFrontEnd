@@ -18,7 +18,7 @@ const RecipeContainer = ({RecipeDetailWrapper, filterRecipe, handleChange, foods
 
     return(
         <div>
-            <RecipeSearchBar handleChange={handleChange}/>
+            <RecipeSearchBar handleChange={handleChange} searchResults={filterRecipe}/>
             <SearchBarDisplayRecipe recipes={filterRecipe}/>
             <Routes>
                 <Route path="/" element={<RecipeList recipes={filterRecipe}/>}></Route>
