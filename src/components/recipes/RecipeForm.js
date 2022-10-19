@@ -8,7 +8,9 @@ const RecipeForm = ({onCreate}) => {
         name: "",
         recipeType: "",
         cookTime: 0,
-        method: "",
+        method1: "",
+        method2: "",
+        method3: "",
         image: ""
     })
 
@@ -60,8 +62,12 @@ const RecipeForm = ({onCreate}) => {
             
                 <Form.Group widths='equal'>
                 <Form.Field control="input" label="Cook Time" type="number"  placeholder="Cook Time" name="cookTime" onChange={handleChange} value={parseInt(stateRecipe.cookTime)} className="formInput"/>
-                <Form.Field control="input" label="Method" type="text" placeholder="Method" maxLength="250" name="method" onChange={handleChange} value={stateRecipe.method} className="formInput"/>
                 <Form.Field control="input" label="Image" type="text" placeholder="Image" maxLength="250" name="image" onChange={handleChange} value={stateRecipe.image} className="formInput"/>
+                </Form.Group>
+                <Form.Group>
+                <Form.Field control="input" label="Step One" type="text" placeholder="Step One" maxLength="250" name="method1" onChange={handleChange} value={stateRecipe.method1} className="formInput"/>
+                <Form.Field control="input" label="Step Two" type="text" placeholder="Step Two" maxLength="250" name="method2" onChange={handleChange} value={stateRecipe.method2} className="formInput"/>
+                <Form.Field control="input" label="Step Three" type="text" placeholder="Step Three" maxLength="250" name="method3" onChange={handleChange} value={stateRecipe.method3} className="formInput"/>
                 </Form.Group>
                 <Button.Group>
                 <Button onClick={handleCancel}>Cancel</Button>
