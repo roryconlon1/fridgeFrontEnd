@@ -238,16 +238,17 @@ footer {
 }
 
 .appName {
-    padding-left: 280px;
+    padding-left: 400px;
     display: flex;
     justify-content: center;
-    color: red;
+    color: #8913ad;
     font-size: 16em;
     position: absolute;
     z-index: 99;
     align-items: center;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    opacity: 70%;
 }
 
 
