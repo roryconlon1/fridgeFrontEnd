@@ -186,11 +186,10 @@ font-size: 2em;
   flex-direction: column;
   flex-wrap: wrap;
 }
-/* 
+
 .method{
-  padding-left: 500px;
-  padding-right: 500px;
-} */
+  font-size: 0.9em;
+}
 
 .form {
   width: 100%;
@@ -319,7 +318,11 @@ form .form-inner .form-group input[type="submit"] {
 .recipeName {
   text-align: center;
   padding-top: 40px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+}
+
+.methodName {
+  text-decoration: underline;
 }
 
 .recipeNameSize{
