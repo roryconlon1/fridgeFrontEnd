@@ -1,4 +1,5 @@
 import React, { memo, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const SelectedFood = (({ select, recipes, resetSelected }) => {
 
@@ -6,7 +7,8 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
 
 
     const showSelected = select.map((item, index) => {
-        return <div key={index}>{item.name}</div>
+        const nameOfFood = item.name.replace(/ *\([^)]*\) */g, "");
+        return <div key={index}>{nameOfFood}</div>
     })
 
     const allRecipeId = select.map((food) => {
@@ -21,7 +23,7 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
 
     const recipesId = recipes.map((recipe) => {
         if (commonRecipes && commonRecipes.includes(recipe.id)) {
-            return recipe.name
+            return <Link to={"/recipes/" + recipe.id}>{recipe.name}</Link>
         }
     })
 
@@ -51,33 +53,28 @@ const SelectedFood = (({ select, recipes, resetSelected }) => {
     })
 
 
-
     const everyRecipeElemnt = allRecipesForAllIngredients.map((recipe, index) => {
         return <li key={index}>
-            {recipe.name}
+            <Link to={"/recipes/" + recipe.id}>{recipe.name}</Link>
         </li>
     })
-
-
-
-
 
     return (
         <div className='components'>
             <div className='recipe_lists'>
                 <div className='individual_recipe_lists'>
-                    Selected Food:
+                    <h1 className='recipeListColumn'>Ingredient:</h1>
                     <p></p>
                     {showSelected}
                 </div>
                 <div className='individual_recipe_lists'>
                     <p></p>
-                    All Recipes for all foods selected:
+                    <h1 className='recipeListColumn'>All Recipes:</h1>
                     <p></p>
                     {everyRecipeElemnt}
                 </div>
                 <div className='individual_recipe_lists'>
-                    <p>Recipes where all foods selected are used:</p>
+                <h1 className='recipeListColumn'>Recipes containing all selected Ingredients:</h1>
                     {allRecipes}
                 </div>
             </div>

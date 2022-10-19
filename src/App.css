@@ -92,16 +92,20 @@ color: #394a51;
 
 
 .recipe_lists {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: table;
+  width: 100%;
+  padding: 3%;
+  padding-left: 18%;
 }
 
 .individual_recipe_lists {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 5%;
+  display: table-cell;
+  padding: 2%;
+}
+
+.recipeListColumn {
+  color: lightskyblue;
+  
 }
 
 .inputBox {
