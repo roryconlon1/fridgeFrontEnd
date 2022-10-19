@@ -39,7 +39,6 @@ const FoodList = ({foods, onSelectedUpdate, select, recipes, resetSelected, user
         <li>
             {select ? <SelectedFood select={select} recipes={recipes} resetSelected={resetSelected}/> : null}
         </li>
-        {userElements}
         </div>
     )
 
