@@ -54,7 +54,7 @@ const HomeContainer = () => {
                         <marquee behavior="alternate" direction="left" truespeed="12">
                             <img src={RedFig}
                                 alt="GeeksforGeeks logo" />
-                            <img src={Rory}
+                            <img src={RedFig4}
                                 alt="GeeksforGeeks logo" />
                             <img src={RedFig5}
                                 alt="GeeksforGeeks logo" />
