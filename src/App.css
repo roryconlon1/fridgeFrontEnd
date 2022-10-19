@@ -104,7 +104,7 @@ color: #394a51;
 }
 
 .recipeListColumn {
-  color: lightskyblue;
+  color: #4183c4
   
 }
 
@@ -338,13 +338,32 @@ a.nav.item:hover {
   font-size: 1em;
 }
 
-.link {
+.ui.secondary.menu .link {
   font-size: 2em;
+  color: lightblue;
 }
 
 .lhsRecipe {
   padding-left: 30px;
 }
+
+.ui.secondary.menu .item   {
+  color: #021691;
+}
+
+/* .logout {
+  font-size: 1.5em;
+  color: red;
+  }
+
+  .ui.secondary.menu .logout  {
+    color: lightblue;
+  } */
+
+  .ui.menu .item>a:not(.ui) {
+    color: #6381e6
+
+  }
 
 
 
