@@ -48,7 +48,7 @@ const RecipeForm = ({onCreate}) => {
                 <Form.Field control="input" label="Name" type="text" maxLength="250" placeholder="Name" name="name" onChange={handleChange} value={stateRecipe.name} className="formInput"/>
                 </Form.Group>
                 <Form.Group widths='equal'>
-                <Form.Field label="Food Category" defaultValue={"default"} control='select' id="recipe" name="recipeType" onChange={handleChange} className="formInput">
+                <Form.Field label="Food Category" defaultValue={"default"} control='select' id="recipe" name="recipeType" onChange={handleChange} className="formInput" >
                     <option value={"default"} disabled>Choose a Category</option>
                     <option value="SOUP">SOUP</option>
                     <option value="PASTA">PASTA</option>
