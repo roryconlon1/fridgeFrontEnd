@@ -104,15 +104,15 @@ const HomeContainer = () => {
                         <ul>
                             <li class="feature-1">
                                 <h4>Easy to Track</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis turpis ac libero interdum, id fringilla purus feugiat. Etiam malesuada mattis nibh at bibendum.</p>
+                                <p>Helpful little tool to make your meal time less of a chore! Fill up your fridge with what items you have and we will do the rest!</p>
                             </li>
                             <li class="feature-2">
                                 <h4>Plan your Week</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis turpis ac libero interdum, id fringilla purus feugiat. Etiam malesuada mattis nibh at bibendum.</p>
+                                <p>Set out your week! No need to worry, this app will take a weight off your mind!</p>
                             </li>
                             <li class="feature-3">
                                 <h4>Ready to Go</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam mollis turpis ac libero interdum, id fringilla purus feugiat. Etiam malesuada mattis nibh at bibendum.</p>
+                                <p>Fire up the app! Anytime anywhere! We will know what you have and what your going to be making!</p>
                             </li>
                             <div class="clear"></div>
                         </ul>
@@ -133,7 +133,7 @@ const HomeContainer = () => {
                 <div id="cta">
                     <div class="wrapper">
                         <h3>Heard Enough?</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod leo a nibh dignissim tincidunt. Nam ultricies odio ac neque suscipit volutpat. Ut dictum adipiscing felis sed malesuada. Integer porta sem nec nibh hendrerit imperdiet. </p>
+                        <p>Now that you know all about us and how we can make meal times a breeze! Hit that get started button and start the journey to an easy life!</p>
                         <Link to="/foods" class="button-2">Get Started</Link>
                     </div>
                 </div>
