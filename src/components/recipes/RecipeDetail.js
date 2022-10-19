@@ -75,10 +75,12 @@ const RecipeDetail = ({recipe, foods, getRecipe}) => {
         <div className="recipeName">
             <h1 className="recipeNameSize">{recipe.name}</h1>
         <div className="individualRecipe">
+            <div className="lhsRecipe">
             <h2>Total Calories: </h2>
             <h2>{allCalories}</h2>
             <h2>Cooking Time: </h2>
             <h2>{recipe.cookTime} minutes</h2>
+            </div>
             <img src={recipe.image} className="recipeImage"></img>
             <h2>Ingredients :</h2>
             <h3><i>{ingredientElements}</i></h3>
