@@ -15,7 +15,12 @@ import Rory from '../images/Rory.jpg'
 
 
 
-const HomeContainer = () => {
+const HomeContainer = ({recipes}) => {
+
+    const allRecipeImages = recipes.map((recipe) => {
+        if(recipe.image === "https://images-gmi-pmc.edge-generalmills.com/a055d263-34ed-412e-a000-28899e84d501.jpg")
+            return recipe.image
+        });
 
     const [logo, setLogo] = useState(["R", "e", "D", "F", "i", "G"]);
 
@@ -124,7 +129,7 @@ const HomeContainer = () => {
                         <article>
                             <h3>Featured Content</h3>
                             <p>Looking for dinner inspiration? Our cosy, budget-friendly autumnal recipes are ideal for cooler evenings. They make use of seasonal produce and cheap storecupboard ingredients. Try our Mushroom Strogganoff, A few clever substitutions can make this traditional creamy casserole low in fat and calories! </p>
-                            <a href="#"><img src={Placeholder} alt="video placeholder" /></a>
+                            <Link to={"/recipes/8"}><img src="https://images-gmi-pmc.edge-generalmills.com/a055d263-34ed-412e-a000-28899e84d501.jpg" alt="video placeholder" /></Link>
                         </article>
                     </div>
                 </div>
@@ -137,6 +142,7 @@ const HomeContainer = () => {
                         <Link to="/foods" class="button-2">Get Started</Link>
                     </div>
                 </div>
+                {allRecipeImages}
 
 
                 {/* <footer>

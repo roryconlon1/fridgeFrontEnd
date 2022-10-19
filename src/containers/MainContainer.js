@@ -183,7 +183,7 @@ const MainContainer = ({logout}) => {
         <div>
             <NavBar logout={logout}/>
             <Routes>
-                <Route path="/" element={<HomeContainer />} />
+                <Route path="/" element={<HomeContainer recipes={recipes}/>} />
                 <Route path="/foods/*" element={<FoodContainer recipes={recipes} handleChange={handleFoodChange} filterFoods={filterFoods} FoodDetailWrapper={FoodDetailWrapper} foods={foods} onSelectedUpdate={onSelectedUpdate} onCreate={handlePostFood} select={select} resetSelected={resetSelected} user={user} />} />
                 <Route path="/recipes/*" element={<RecipeContainer RecipeDetailWrapper={RecipeDetailWrapper} recipes={recipes} filter={filter} handleChange={handleChange} filterRecipe={filterRecipe} foods={foods} onCreate={handlePost} />} />
             </Routes>
